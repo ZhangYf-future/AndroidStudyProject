@@ -63,4 +63,7 @@ dependencies {
     api rootProject.ext.dependencies["fragment"]
     api rootProject.ext.dependencies["multidex"]
     api rootProject.ext.dependencies["lifecycle"]
+    implementation rootProject.ext.dependencies["roomDb"]
+    kapt rootProject.ext.dependencies["roomDbKt"]
+    implementation rootProject.ext.dependencies["roomDbKt_Extensions"]
 }
