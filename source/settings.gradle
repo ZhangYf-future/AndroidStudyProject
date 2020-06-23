@@ -1,2 +1,4 @@
+include ':data'
+include ':baselib'
 include ':app'
 rootProject.name = "MyStudyProject"

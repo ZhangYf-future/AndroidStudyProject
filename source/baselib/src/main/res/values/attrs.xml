@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--自定义加载框-->
+    <declare-styleable name="LVCircularRing">
+        <attr name="bgColor" format="color" />
+        <attr name="barColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="ScrollbarRecyclerView">
+        <attr name="bar_length" format="dimension"/>
+        <attr name="bar_width" format="dimension"/>
+        <attr name="bar_margin" format="dimension"/>
+        <attr name="bar_bg_color" format="color"/>
+        <attr name="bar_color" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="TwoStyleTextView">
+        <!--开始位置-->
+        <attr name="start_position" format="integer" />
+        <!--开始位置字符-->
+        <attr name="start_position_str" format="reference|string" />
+        <!--结束位置-->
+        <attr name="end_position" format="integer" />
+        <!--结束位置字符-->
+        <attr name="end_position_str" format="reference|string"/>
+        <!--颜色-->
+        <attr name="other_text_color" format="reference|color" />
+        <!--字体大小-->
+        <attr name="other_text_size" format="dimension" />
+        <!--是否包含开始字段-->
+        <attr name="include_start_str" format="boolean"/>
+        <!--是否包含结束字段-->
+        <attr name="include_end_str" format="boolean" />
+        <!--是否设置点击事件-->
+        <attr name="is_clickable" format="boolean" />
+        <!--字体样式-->
+        <attr name="other_text_style" format="enum" >
+            <enum name = "normal" value="0" />
+            <enum name="bold" value="1" />
+            <enum name="italic" value="2" />
+            <enum name="italic_bold" value="3" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="TwoTextView">
+        <!--第一个文本的样式-->
+        <attr name="first_text_size" format="dimension|reference" />
+        <attr name="first_text_color" format="color|reference" />
+        <attr name="first_text" format="string" />
+        <attr name="first_text_style" format="enum">
+            <enum name = "normal" value="0" />
+            <enum name="bold" value="1" />
+            <enum name="italic" value="2" />
+            <enum name="italic_bold" value="3" />
+        </attr>
+
+        <!--第二个文本的样式-->
+        <attr name="second_text_size" format="dimension|reference" />
+        <attr name="second_text_color" format="color|reference" />
+        <attr name="second_text" format="string" />
+        <attr name="second_text_style" format="enum">
+            <enum name = "normal" value="0" />
+            <enum name="bold" value="1" />
+            <enum name="italic" value="2" />
+            <enum name="italic_bold" value="3" />
+        </attr>
+
+        <!--两个TextView之间的距离-->
+        <attr name="margin_text_view" format="dimension" />
+    </declare-styleable>
+</resources>

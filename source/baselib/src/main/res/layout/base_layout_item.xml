@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--这个文件没什么用，但是这个文件必须存在，主要是为了生成默认的item,position,doClick-->
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="item"
+            type="String"
+            />
+        <variable
+            name="position"
+            type="Integer"
+            />
+        <variable
+            name="total"
+            type="Integer"
+            />
+        <variable
+            name="doClick"
+            type="android.view.View.OnClickListener"
+            />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+
