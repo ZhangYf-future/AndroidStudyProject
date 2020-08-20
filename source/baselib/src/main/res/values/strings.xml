@@ -9,4 +9,7 @@
     <string name="error_net">网络请求出错，请稍后重试</string>
     <string name="error_request">数据请求出错，请稍后重试</string>
     <string name="data_empty">未能请求到数据，请稍后重试</string>
+
+    <!--没有传递页面参数过来-->
+    <string name="error_lack_page_param">缺少页面参数</string>
 </resources>

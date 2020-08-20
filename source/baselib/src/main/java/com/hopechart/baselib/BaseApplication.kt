@@ -3,11 +3,7 @@ package com.hopechart.baselib
 import android.app.Application
 import android.content.Context
 import androidx.multidex.MultiDex
-import com.github.promeg.pinyinhelper.Pinyin
-import com.github.promeg.pinyinhelper.PinyinDict
-import com.github.promeg.pinyinhelper.PinyinMapDict
-import com.hopechart.baselib.utils.AppManager
-import com.hopechart.baselib.utils.SharedPreferencesUtils
+import com.hopechart.baselib.db.AppDatabase
 
 /**
  *@time 2020/4/15
@@ -15,13 +11,13 @@ import com.hopechart.baselib.utils.SharedPreferencesUtils
  *@description
  *@introduction
  */
-open class BaseApplication: Application() {
+open class BaseApplication : Application() {
     companion object {
         private var instance: BaseApplication? = null
 
         @JvmStatic
-        fun getInstance(): BaseApplication{
-            if(instance == null)
+        fun getInstance(): BaseApplication {
+            if (instance == null)
                 throw IllegalStateException("BaseApplication尚未初始化")
             else {
                 return instance as BaseApplication
@@ -29,7 +25,11 @@ open class BaseApplication: Application() {
         }
     }
 
-    open lateinit var cookieExpireListener : CookieExpireListener
+    //cookie过期接口
+    open lateinit var cookieExpireListener: CookieExpireListener
+
+    //数据库
+    open lateinit var mAppDataBase: AppDatabase
 
     override fun attachBaseContext(base: Context?) {
         super.attachBaseContext(base)
@@ -41,11 +41,8 @@ open class BaseApplication: Application() {
         instance = this
         //关闭在小米9等手机上出现的错误弹框
         closeAndroidPDialog()
-        //初始化AppManager
-        AppManager.getInstance().init(this)
-        //初始化SharedPreferences
-        SharedPreferencesUtils.init(this)
     }
+
 
     //关闭在小米9等手机上出现的错误弹框
     private fun closeAndroidPDialog() {
@@ -75,7 +72,7 @@ open class BaseApplication: Application() {
         }
     }
 
-    interface CookieExpireListener{
+    interface CookieExpireListener {
         fun cookieExpire()
     }
 

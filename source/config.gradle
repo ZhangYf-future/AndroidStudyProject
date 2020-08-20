@@ -34,25 +34,37 @@ ext {
 
             //room数据库
             roomDbVersion          : "2.2.5",
+            //xRecyclerView
+            xRecyclerView          : "1.6.0",
+
+            //androidx 的media2库
+            androidx_media2_version: "1.0.3"
     ]
 
     dependencies = [
-            "appcompat"          : "androidx.appcompat:appcompat:${versions["appcompatVersion"]}",
-            "coreKtx"            : "androidx.core:core-ktx:${versions["coreKtxVersion"]}",
-            "junit"              : "junit:junit:${versions["junitVersion"]}",
-            "test_junit"         : "androidx.test.ext:junit:${versions["testJunitVersion"]}",
-            "test_espresso"      : "androidx.test.espresso:espresso-core:${versions["espressoVersion"]}",
+            "appcompat"            : "androidx.appcompat:appcompat:${versions["appcompatVersion"]}",
+            "coreKtx"              : "androidx.core:core-ktx:${versions["coreKtxVersion"]}",
+            "junit"                : "junit:junit:${versions["junitVersion"]}",
+            "test_junit"           : "androidx.test.ext:junit:${versions["testJunitVersion"]}",
+            "test_espresso"        : "androidx.test.espresso:espresso-core:${versions["espressoVersion"]}",
 
 
-            "constraintlayout"   : "androidx.constraintlayout:constraintlayout:${versions["constraintlayoutVersion"]}",
-            "fragment"           : "androidx.fragment:fragment-ktx:${versions["fragmentVersion"]}",
-            "multidex"           : "androidx.multidex:multidex:${versions["multidexVersion"]}",
-            "lifecycle"          : "androidx.lifecycle:lifecycle-extensions:${versions["lifecycleVersion"]}",
-            "material"           : "com.google.android.material:material:${versions["materialVersion"]}",
+            "constraintlayout"     : "androidx.constraintlayout:constraintlayout:${versions["constraintlayoutVersion"]}",
+            "fragment"             : "androidx.fragment:fragment-ktx:${versions["fragmentVersion"]}",
+            "multidex"             : "androidx.multidex:multidex:${versions["multidexVersion"]}",
+            "lifecycle"            : "androidx.lifecycle:lifecycle-extensions:${versions["lifecycleVersion"]}",
+            "material"             : "com.google.android.material:material:${versions["materialVersion"]}",
 
-            "roomDb"             : "androidx.room:room-runtime:${versions["roomDbVersion"]}",
-            "roomDbKt"           : "androidx.room:room-compiler:${versions["roomDbVersion"]}",
-            "roomDbKt_Extensions": "androidx.room:room-ktx:${versions["roomDbVersion"]}"
+            "roomDb"               : "androidx.room:room-runtime:${versions["roomDbVersion"]}",
+            "roomDbKt"             : "androidx.room:room-compiler:${versions["roomDbVersion"]}",
+            "roomDbKt_Extensions"  : "androidx.room:room-ktx:${versions["roomDbVersion"]}",
+            //xRecyclerView
+            "xRecyclerView"        : "com.jcodecraeer:xrecyclerview:${versions["xRecyclerView"]}",
+
+            //androidx media库
+            androidx_media2_session: "androidx.media2:media2-session:${versions["androidx_media2_version"]}",
+            androidx_media2_widget : "androidx.media2:media2-widget:${versions["androidx_media2_version"]}",
+            androidx_media2_player : "androidx.media2:media2-player:${versions["androidx_media2_version"]}"
     ]
 
     sign = [

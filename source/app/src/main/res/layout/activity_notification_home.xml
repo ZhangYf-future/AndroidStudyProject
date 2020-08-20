@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".notification.home.NotificationHomeActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/layout_title"
+            layout="@layout/layout_title"
+            app:title="@{@string/about_notification}" />
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_title">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!--显示一个普通的通知-->
+                <Button
+                    android:id="@+id/btn_show_simple_notification"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="doClick"
+                    style="@style/ButtonStyle"
+                    android:text="@string/show_simple_notification" />
+
+                <Button
+                    android:id="@+id/btn_show_progress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="doClick"
+                    style="@style/ButtonStyle"
+                    android:text="通知栏显示进度条"
+                    />
+
+                <Button
+                    android:id="@+id/btn_other_notification"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="doClick"
+                    style="@style/ButtonStyle"
+                    android:text="@string/other_notification"
+                    />
+
+                <Button
+                    android:id="@+id/btn_big_picture_notification"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="doClick"
+                    style="@style/ButtonStyle"
+                    android:text="@string/expanded_notification_big_picture"
+                    />
+                <Button
+                    android:id="@+id/btn_big_text_notification"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="doClick"
+                    style="@style/ButtonStyle"
+                    android:text="@string/expanded_notification_big_text"
+                    />
+
+                <Button
+                    android:id="@+id/btn_more_line_notification"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="doClick"
+                    style="@style/ButtonStyle"
+                    android:text="@string/expanded_notification_more_line"
+                    />
+
+                <Button
+                    android:id="@+id/btn_messaging_notification"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="doClick"
+                    style="@style/ButtonStyle"
+                    android:text="@string/expanded_notification_messaging_style"
+                    />
+
+                <Button
+                    android:id="@+id/btn_media_notification"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="doClick"
+                    style="@style/ButtonStyle"
+                    android:text="@string/expanded_notification_media_style"
+                    />
+            </LinearLayout>
+        </ScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

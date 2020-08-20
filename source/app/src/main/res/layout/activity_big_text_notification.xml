@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".notification.style.BigTextActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <include
+            android:id="@+id/layout_title"
+            layout="@layout/layout_title"
+            app:title="@{@string/add_big_text}"
+           />
+
+        <Button
+            android:id="@+id/btn_big_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            style="@style/ButtonStyle"
+            app:layout_constraintTop_toBottomOf="@id/layout_title"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text="发送大段文本通知"
+            android:onClick="doClick"
+            />
+
+        <Button
+            android:id="@+id/btn_more_style_big_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            style="@style/ButtonStyle"
+            app:layout_constraintTop_toBottomOf="@id/btn_big_text"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text="发送大段多样式文本通知"
+            android:onClick="doClick"
+            />
+
+        <TextView
+            android:id="@+id/tv_result"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/btn_more_style_big_text"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:padding="20dp"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

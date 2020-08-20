@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".notification.progress.ProgressNotificationActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/title"
+            layout="@layout/layout_title"
+            app:title='@{@string/progress_notification}' />
+
+        <!--发送确定完成时间的进度条-->
+        <Button
+            android:id="@+id/btn_send_progress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="10dp"
+            android:onClick="doClick"
+            android:paddingVertical="10dp"
+            android:text="发送确定完成时间的进度条"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title" />
+
+        <!--发送不确定完成时间的进度条-->
+        <Button
+            android:id="@+id/btn_send_no_progress"
+            style="@style/ButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:onClick="doClick"
+            android:text="发送不确定完成时间的进度条"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_send_progress" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -2,13 +2,45 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.project.mystudyproject">
 
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".notification.style.MediaStyleActivity"></activity>
+        <activity android:name=".notification.style.MessagingStyleActivity" />
+        <activity android:name=".notification.style.InboxStyleActivity" />
+        <activity android:name=".notification.style.BigTextActivity" />
+        <activity android:name=".notification.style.BigPictureActivity" />
+        <activity
+            android:name=".notification.other.ImportantActivity"
+            android:parentActivityName=".notification.progress.ProgressNotificationActivity" />
+        <activity android:name=".notification.other.OtherNotificationActivity" />
+        <activity
+            android:name=".notification.progress.ProgressNotificationActivity"
+            android:parentActivityName=".notification.home.NotificationHomeActivity" />
+        <activity
+            android:name=".notification.simple.SimpleNotification4Activity"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTask"
+            android:taskAffinity="" />
+        <activity
+            android:name=".notification.simple.SimpleNotification3Activity"
+            android:parentActivityName=".notification.home.NotificationHomeActivity" />
+        <activity
+            android:name=".notification.simple.SimpleNotification2Activity"
+            android:parentActivityName=".notification.simple.SimpleNotification3Activity" />
+        <activity
+            android:name=".notification.simple.SimpleNotificationActivity"
+            android:parentActivityName=".notification.home.NotificationHomeActivity" />
+        <activity
+            android:name=".notification.home.NotificationHomeActivity"
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -16,6 +48,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <receiver android:name=".notification.simple.NotificationInputReceiver">
+            <intent-filter>
+                <action android:name="replyNotification" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

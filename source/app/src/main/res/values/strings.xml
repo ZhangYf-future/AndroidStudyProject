@@ -1,3 +1,38 @@
 <resources>
     <string name="app_name">MyStudyProject</string>
+
+    <string name="home_page">首页</string>
+    <string name="about_notification">通知栏相关</string>
+    <string name="show_simple_notification">显示一个简单的通知信息</string>
+    <string name="simple_notification">简单的通知消息</string>
+    <string name="progress_notification">在通知栏显示进度条</string>
+    <string name="other_notification">其它类型的通知</string>
+    <string name="send_notification">发送通知</string>
+
+    <string name="expanded_notification_big_picture">展开式通知——添加大图片</string>
+    <string name="add_big_picture">添加大图片的通知</string>
+    <string name="expanded_notification_big_text">展开式通知——添加大段文本</string>
+    <string name="add_big_text">添加大段文本的通知</string>
+
+    <string name="big_text">这里是大段文本这里是大段文本这里是大段文本这里是大段文本这里是大段文本这里是大段文本这里是大段文本这里是大段文本这里是大段文本这里是大段文本这里是大段文本这里是大段文本这里是大段文本这里是大段文本这里是大段文本这里是大段文本这里是大段文本这里是大段文本这里是大段文本这里是大段文本这里是大段文本这里是大段文本这里是大段文本</string>
+    <string name="more_style_big_text">
+        这是一段普通的文本，&lt;b>这是一段加粗的文本&lt;/b>&lt;em>这是强调的内容，目前使用斜体展示&lt;/em>
+        &lt;i>斜体则是这样的&lt;/i>&lt;cite>这样也行&lt;/cite>&lt;dfn>要不然用这样&lt;/dfn>
+        &lt;big>还可以把字体变大&lt;/big>&lt;small>变小也不是问题&lt;/small>
+        &lt;font color="red" face="monospace">还可以改变颜色和字体&lt;/font>&lt;br/>
+        &lt;tt>而等宽字体则是这样的&lt;/tt>
+        &lt;s>删除线&lt;/s>&lt;strike>删除线&lt;/strike>&lt;del>删除线&lt;/del>
+        &lt;u>下划线&lt;/u>
+    </string>
+
+    <string name="expanded_notification_more_line">展开式通知——收件箱样式的通知</string>
+    <string name="add_more_line">收件箱样式的通知</string>
+
+    <string name="expanded_notification_messaging_style">展开式通知 —— 显示对话</string>
+    <string name="add_messaging_notification">显示对话的通知</string>
+
+    <string name="expanded_notification_media_style">展开式通知 —— 使用媒体控件创建通知</string>
+    <string name="add_media_notification">显示媒体通知</string>
+
+
 </resources>

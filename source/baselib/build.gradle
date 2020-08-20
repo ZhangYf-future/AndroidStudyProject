@@ -63,7 +63,15 @@ dependencies {
     api rootProject.ext.dependencies["fragment"]
     api rootProject.ext.dependencies["multidex"]
     api rootProject.ext.dependencies["lifecycle"]
-    implementation rootProject.ext.dependencies["roomDb"]
+    //room数据库
+    api rootProject.ext.dependencies["roomDb"]
     kapt rootProject.ext.dependencies["roomDbKt"]
-    implementation rootProject.ext.dependencies["roomDbKt_Extensions"]
+    api rootProject.ext.dependencies["roomDbKt_Extensions"]
+    //xRecyclerView
+    api rootProject.ext.dependencies["xRecyclerView"]
+
+    //media2库
+    api rootProject.ext.dependencies["androidx_media2_session"]
+    api rootProject.ext.dependencies["androidx_media2_widget"]
+    api rootProject.ext.dependencies["androidx_media2_player"]
 }
