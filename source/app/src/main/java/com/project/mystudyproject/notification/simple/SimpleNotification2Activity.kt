@@ -13,7 +13,7 @@ class SimpleNotification2Activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_simple_notification2)
         val value = intent.getStringExtra("name")
-        Logs.Companion.e("获取到传递的信息$value")
+        Logs.e("获取到传递的信息$value")
         tv_title.text = value
 
         val manager: NotificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager

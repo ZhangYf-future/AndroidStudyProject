@@ -4,11 +4,9 @@ import android.app.PendingIntent
 import android.content.Intent
 import android.graphics.BitmapFactory
 import android.graphics.Color
-import android.support.v4.media.session.MediaSessionCompat
 import android.view.View
 import androidx.core.app.NotificationCompat
 import com.hopechart.baselib.ui.BaseActivity
-import com.hopechart.baselib.utils.Logs
 import com.project.mystudyproject.R
 import com.project.mystudyproject.databinding.ActivityMediaStyleBinding
 import com.project.mystudyproject.notification.style.utils.SendNotificationUtils
@@ -48,6 +46,7 @@ class MediaStyleActivity : BaseActivity<ActivityMediaStyleBinding>() {
                 androidx.media.app.NotificationCompat.MediaStyle()
                 .setShowActionsInCompactView(0,1,2)
             )
+            //设置此属性以让通知再锁屏界面显示完整信息
             setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
             setLargeIcon(BitmapFactory.decodeResource(resources, R.drawable.frank))
             color = Color.parseColor("#4574fa")

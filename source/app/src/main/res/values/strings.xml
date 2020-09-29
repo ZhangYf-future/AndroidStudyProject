@@ -14,7 +14,9 @@
     <string name="expanded_notification_big_text">展开式通知——添加大段文本</string>
     <string name="add_big_text">添加大段文本的通知</string>
 
-    <string name="big_text">这里是大段文本这里是大段文本这里是大段文本这里是大段文本这里是大段文本这里是大段文本这里是大段文本这里是大段文本这里是大段文本这里是大段文本这里是大段文本这里是大段文本这里是大段文本这里是大段文本这里是大段文本这里是大段文本这里是大段文本这里是大段文本这里是大段文本这里是大段文本这里是大段文本这里是大段文本这里是大段文本</string>
+    <string name="big_text">
+        这里是大段文本这里是大段文本这里是大段文本这里是大段文本这里是大段文本这里是大段文本这里是大段文本这里是大段文本这里是大段文本这里是大段文本这里是大段文本这里是大段文本这里是大段文本这里是大段文本这里是大段文本这里是大段文本这里是大段文本这里是大段文本这里是大段文本这里是大段文本这里是大段文本这里是大段文本这里是大段文本
+    </string>
     <string name="more_style_big_text">
         这是一段普通的文本，&lt;b>这是一段加粗的文本&lt;/b>&lt;em>这是强调的内容，目前使用斜体展示&lt;/em>
         &lt;i>斜体则是这样的&lt;/i>&lt;cite>这样也行&lt;/cite>&lt;dfn>要不然用这样&lt;/dfn>
@@ -34,5 +36,26 @@
     <string name="expanded_notification_media_style">展开式通知 —— 使用媒体控件创建通知</string>
     <string name="add_media_notification">显示媒体通知</string>
 
+    <string name="group_notification">创建一组通知</string>
+    <string name="add_new_notification_to_group">向某个组中添加新通知</string>
 
+    <!--通知渠道-->
+    <string name="create_manage_notification_channel">创建和管理通知渠道</string>
+    <string name="create_a_high_notification_channel">创建一个强提醒的通知渠道</string>
+    <string name="create_a_low_notification_channel">创建一个弱提醒的通知渠道</string>
+    <string name="send_a_high_alarm_notification">发送一个强提醒通知</string>
+    <string name="send_a_low_alarm_notification">发送一个弱提醒通知</string>
+    <string name="read_high_notification_channel_info">读取强提醒通知渠道的信息</string>
+    <string name="open_notification_channel_setting">打开通知渠道设置页面</string>
+    <string name="create_notification_channel_group">创建通知渠道分组</string>
+    <string name="create_channel_test_channel_group">创建用于测试渠道分组的通知渠道</string>
+    <string name="send_work_receive_message_notification">发送工作账号下接收消息的通知</string>
+
+    <!--通知栏基础操作总结-->
+    <string name="basic_summary">基础操作总结</string>
+    <string name="send_basic_notification">发送一个基本的通知栏消息</string>
+    <string name="create_notification_channel_group_test">测试创建渠道分组</string>
+    <string name="delay_send_notification">延迟发送一条通知</string>
+    <string name="test_notification_group">测试通知分组</string>
+    <string name="add_test_notification_group">添加测试通知分组的通知</string>
 </resources>

@@ -5,10 +5,13 @@ import android.view.View
 import com.hopechart.baselib.ui.BaseActivity
 import com.project.mystudyproject.R
 import com.project.mystudyproject.databinding.ActivityNotificationHomeBinding
+import com.project.mystudyproject.notification.channel.NotificationChannelTestActivity
+import com.project.mystudyproject.notification.group.GroupNotificationActivity
 import com.project.mystudyproject.notification.other.OtherNotificationActivity
 import com.project.mystudyproject.notification.progress.ProgressNotificationActivity
 import com.project.mystudyproject.notification.simple.SimpleNotificationActivity
 import com.project.mystudyproject.notification.style.*
+import com.project.mystudyproject.notification.summary.SummaryActivity
 
 class NotificationHomeActivity : BaseActivity<ActivityNotificationHomeBinding>() {
 
@@ -42,6 +45,15 @@ class NotificationHomeActivity : BaseActivity<ActivityNotificationHomeBinding>()
             }
             R.id.btn_media_notification -> {
                 startActivity(Intent(this, MediaStyleActivity::class.java))
+            }
+            R.id.btn_group_notification -> {
+                startActivity(Intent(this, GroupNotificationActivity::class.java))
+            }
+            R.id.btn_notification_channel -> {
+                startActivity(Intent(this, NotificationChannelTestActivity::class.java))
+            }
+            R.id.btn_summary -> {
+                startActivity(Intent(this, SummaryActivity::class.java))
             }
         }
     }

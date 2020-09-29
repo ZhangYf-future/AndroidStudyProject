@@ -5,10 +5,7 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.os.Handler
-import androidx.core.app.NotificationCompat
-import androidx.core.app.NotificationManagerCompat
 import androidx.core.app.RemoteInput
-import com.hopechart.baselib.BaseApplication
 import com.hopechart.baselib.utils.Logs
 
 class NotificationInputReceiver: BroadcastReceiver() {

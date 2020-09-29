@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context=".notification.summary.SummaryActivity">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <include
+                layout="@layout/layout_title"
+                app:title="@{@string/basic_summary}" />
+
+        <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                <!--发送一个基本的通知栏消息-->
+                <Button
+                        android:id="@+id/btn_send_basic_notification"
+                        style="@style/ButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="doClick"
+                        android:text="@string/send_basic_notification" />
+
+                <!--测试呼吸灯是否有用-->
+                <Button
+                        android:id="@+id/btn_test_light"
+                        style="@style/ButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="doClick"
+                        android:text="@string/delay_send_notification"
+                        />
+
+                <!--测试创建渠道分组-->
+                <Button
+                        android:id="@+id/btn_test_create_channel_group"
+                        style="@style/ButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="doClick"
+                        android:text="@string/create_notification_channel_group_test"
+                        />
+
+                <!--测试通知分组-->
+                <Button
+                        android:id="@+id/btn_test_notification_group"
+                        style="@style/ButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="doClick"
+                        android:text="@string/test_notification_group"
+                        />
+
+                <Button
+                        android:id="@+id/add_test_notification_group"
+                        style="@style/ButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="doClick"
+                        android:text="@string/add_test_notification_group"
+                        />
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</layout>

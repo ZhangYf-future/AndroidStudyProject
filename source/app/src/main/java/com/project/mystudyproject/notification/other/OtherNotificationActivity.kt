@@ -12,7 +12,6 @@ import android.view.View
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import com.hopechart.baselib.ui.BaseActivity
-import com.hopechart.baselib.utils.Logs
 import com.project.mystudyproject.R
 import com.project.mystudyproject.databinding.ActivityOtherNotificationBinding
 

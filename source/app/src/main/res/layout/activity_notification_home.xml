@@ -41,8 +41,7 @@
                     android:layout_height="wrap_content"
                     android:onClick="doClick"
                     style="@style/ButtonStyle"
-                    android:text="通知栏显示进度条"
-                    />
+                    android:text="通知栏显示进度条" />
 
                 <Button
                     android:id="@+id/btn_other_notification"
@@ -50,8 +49,7 @@
                     android:layout_height="wrap_content"
                     android:onClick="doClick"
                     style="@style/ButtonStyle"
-                    android:text="@string/other_notification"
-                    />
+                    android:text="@string/other_notification" />
 
                 <Button
                     android:id="@+id/btn_big_picture_notification"
@@ -59,16 +57,15 @@
                     android:layout_height="wrap_content"
                     android:onClick="doClick"
                     style="@style/ButtonStyle"
-                    android:text="@string/expanded_notification_big_picture"
-                    />
+                    android:text="@string/expanded_notification_big_picture" />
+
                 <Button
                     android:id="@+id/btn_big_text_notification"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:onClick="doClick"
                     style="@style/ButtonStyle"
-                    android:text="@string/expanded_notification_big_text"
-                    />
+                    android:text="@string/expanded_notification_big_text" />
 
                 <Button
                     android:id="@+id/btn_more_line_notification"
@@ -76,8 +73,7 @@
                     android:layout_height="wrap_content"
                     android:onClick="doClick"
                     style="@style/ButtonStyle"
-                    android:text="@string/expanded_notification_more_line"
-                    />
+                    android:text="@string/expanded_notification_more_line" />
 
                 <Button
                     android:id="@+id/btn_messaging_notification"
@@ -85,8 +81,7 @@
                     android:layout_height="wrap_content"
                     android:onClick="doClick"
                     style="@style/ButtonStyle"
-                    android:text="@string/expanded_notification_messaging_style"
-                    />
+                    android:text="@string/expanded_notification_messaging_style" />
 
                 <Button
                     android:id="@+id/btn_media_notification"
@@ -94,8 +89,30 @@
                     android:layout_height="wrap_content"
                     android:onClick="doClick"
                     style="@style/ButtonStyle"
-                    android:text="@string/expanded_notification_media_style"
-                    />
+                    android:text="@string/expanded_notification_media_style" />
+
+                <Button
+                    android:id="@+id/btn_group_notification"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="doClick"
+                    style="@style/ButtonStyle"
+                    android:text="@string/group_notification" />
+
+                <Button
+                    android:id="@+id/btn_notification_channel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="doClick"
+                    style="@style/ButtonStyle"
+                    android:text="@string/create_manage_notification_channel" />
+                <Button
+                        android:id="@+id/btn_summary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="doClick"
+                        style="@style/ButtonStyle"
+                        android:text="@string/basic_summary" />
             </LinearLayout>
         </ScrollView>
 
