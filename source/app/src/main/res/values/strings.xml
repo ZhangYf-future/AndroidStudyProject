@@ -58,4 +58,6 @@
     <string name="delay_send_notification">延迟发送一条通知</string>
     <string name="test_notification_group">测试通知分组</string>
     <string name="add_test_notification_group">添加测试通知分组的通知</string>
+    <string name="test_to_activity">测试跳转Activity</string>
+    <string name="test_to_activity_with_task_stack_builder">测试使用TaskStackBuilder跳转Activity</string>
 </resources>

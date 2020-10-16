@@ -71,6 +71,74 @@
                         android:text="@string/add_test_notification_group"
                         />
 
+                <Button
+                        android:id="@+id/add_test_to_Activity"
+                        style="@style/ButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="doClick"
+                        android:text="@string/test_to_activity"
+                        />
+
+                <Button
+                        android:id="@+id/test_to_activity_with_task_stack_builder"
+                        style="@style/ButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="doClick"
+                        android:text="@string/test_to_activity_with_task_stack_builder"
+                        />
+                <Button
+                    android:id="@+id/test_to_special_activity"
+                    style="@style/ButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="doClick"
+                    android:text="跳转到特殊的Activity"
+                    />
+
+                <Button
+                        android:id="@+id/test_big_picture_notification"
+                        style="@style/ButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="doClick"
+                        android:text="大图通知"
+                        />
+                <Button
+                        android:id="@+id/test_big_text_notification"
+                        style="@style/ButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="doClick"
+                        android:text="大段文本通知"
+                        />
+
+                <Button
+                        android:id="@+id/test_inbox_notification"
+                        style="@style/ButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="doClick"
+                        android:text="收件箱样式的通知"
+                        />
+
+                <Button
+                        android:id="@+id/test_messaging_notification"
+                        style="@style/ButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="doClick"
+                        android:text="在通知中显示对话"
+                        />
+                <Button
+                        android:id="@+id/test_media_notification"
+                        style="@style/ButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="doClick"
+                        android:text="使用媒体控件创建通知"
+                        />
             </LinearLayout>
         </ScrollView>
     </LinearLayout>

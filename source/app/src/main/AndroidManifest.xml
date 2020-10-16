@@ -12,8 +12,21 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".notification.summary.SummaryActivity"></activity>
-        <activity android:name=".notification.channel.NotificationChannelTestActivity"></activity>
+        <activity android:name=".notification.summary.SpecialActivity"
+                android:launchMode="singleTask"
+                android:taskAffinity=""
+                android:excludeFromRecents="true"
+                ></activity>
+        <activity
+                android:name=".notification.summary.TestTaskStackBuilderActivity2"
+                android:parentActivityName=".notification.summary.TestTaskStackBuilderActivity1" />
+        <activity
+                android:name=".notification.summary.TestTaskStackBuilderActivity1"
+                android:parentActivityName=".notification.summary.SummaryActivity" />
+        <activity
+                android:name=".notification.summary.SummaryActivity"
+                android:parentActivityName=".notification.home.NotificationHomeActivity" />
+        <activity android:name=".notification.channel.NotificationChannelTestActivity" />
         <activity android:name=".notification.group.GroupNotificationActivity" />
         <activity android:name=".notification.style.MediaStyleActivity" />
         <activity android:name=".notification.style.MessagingStyleActivity" />
@@ -57,6 +70,8 @@
                 <action android:name="replyNotification" />
             </intent-filter>
         </receiver>
+
+
     </application>
 
 </manifest>
