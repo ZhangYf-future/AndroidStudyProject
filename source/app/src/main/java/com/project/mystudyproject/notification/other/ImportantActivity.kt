@@ -12,12 +12,15 @@ class ImportantActivity : BaseActivity<ActivityImportantBinding>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         requestWindowFeature(Window.FEATURE_NO_TITLE)
-        super.onCreate(savedInstanceState)
-        //设置页面全屏
-        window.setFlags(
-            WindowManager.LayoutParams.FLAG_FULLSCREEN,
-            WindowManager.LayoutParams.FLAG_FULLSCREEN
+        //设置以下属性在锁屏显示通知的时候直接打开本页面
+        window.addFlags(
+            WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED
+                    or WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD
+                    or WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON
+                    or WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON
         )
+
+        super.onCreate(savedInstanceState)
     }
 
     override fun getLayoutId(): Int = R.layout.activity_important

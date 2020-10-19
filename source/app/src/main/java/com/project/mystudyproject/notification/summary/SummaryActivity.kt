@@ -14,6 +14,7 @@ import android.view.View
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.app.Person
+import androidx.core.app.RemoteInput
 import androidx.core.app.TaskStackBuilder
 import androidx.core.graphics.drawable.IconCompat
 import com.hopechart.baselib.ui.BaseActivity
@@ -22,6 +23,7 @@ import com.hopechart.baselib.utils.SdkVersionUtils
 import com.project.mystudyproject.R
 import com.project.mystudyproject.databinding.ActivitySummaryBinding
 import com.project.mystudyproject.notification.channel.NotificationChannelTestActivity
+import com.project.mystudyproject.notification.other.ImportantActivity
 import com.project.mystudyproject.notification.style.MessagingStyleActivity
 import com.project.mystudyproject.notification.utils.ChannelUtils
 import com.project.mystudyproject.notification.utils.NotificationUtils
@@ -44,7 +46,7 @@ class SummaryActivity : BaseActivity<ActivitySummaryBinding>() {
 
         val intent = Intent()
         intent.action = TestMediaStyleBroadcastReceiver()::class.java.name
-        intent.putExtra("2113","21321")
+        intent.putExtra("2113", "21321")
         sendBroadcast(intent)
     }
 
@@ -91,6 +93,26 @@ class SummaryActivity : BaseActivity<ActivitySummaryBinding>() {
                 createMessagingStyleNotification()
             R.id.test_media_notification ->
                 createMediaStyleNotification()
+            R.id.test_have_actions_notification ->
+                createHaveActionsNotification()
+            R.id.test_have_reply_notification ->
+                createHaveReplyNotification()
+            R.id.test_with_finish_notification -> {
+                mProgress = 0
+                createWithFinishNotification()
+            }
+            R.id.test_indeterminate_notification -> {
+                mTime = 0
+                createIndeterminateNotification()
+            }
+            R.id.test_visibility_private_notification ->
+                createPrivateVisibility()
+            R.id.test_urgent_notification -> {
+                //等待5秒发送一条紧急消息
+                Handler().postDelayed({
+                    createUrgentNotification()
+                }, 5000)
+            }
 
         }
     }
@@ -589,12 +611,234 @@ class SummaryActivity : BaseActivity<ActivitySummaryBinding>() {
         utils.sendNotification(1000, builder.build())
     }
 
+    //添加操作按钮
+    private fun createHaveActionsNotification() {
+        //创建渠道
+        createTestStyleChannel()
+        //创建通知实体
+        val title = "操作按钮"
+        val content = "包含操作按钮的通知"
+        //两个操作按钮
+        val intent1 = Intent(TestMediaStyleBroadcastReceiver::class.java.name)
+        val action1 =
+            PendingIntent.getBroadcast(this, 10, intent1, PendingIntent.FLAG_UPDATE_CURRENT)
+        val intent2 = Intent(this, MessagingStyleActivity::class.java)
+        val action2 =
+            PendingIntent.getActivity(this, 11, intent2, PendingIntent.FLAG_UPDATE_CURRENT)
+        //创建通知工具类
+        val utils = NotificationUtils.getInstance(this)
+        val builder = utils
+            .createNotification(testStyleChannelId, R.drawable.frank, title, content)
+        //将操作按钮添加到通知上
+        builder.addAction(R.drawable.ic_icon1, "已读", action1)
+        builder.addAction(R.drawable.ic_icon4, "查看详情", action2)
+        //显示通知
+        utils.sendNotification(builder.build())
+    }
+
+    //添加直接回复操作的通知
+    private val REPLY_TEXT_KEY = "replyTextKey"
+
+    //回复的对象
+    private val REPLY_USER_ID = "replyUserId"
+
+    //通知id
+    private val REPLY_NOTIFICATION_ID = 5000
+    private fun createHaveReplyNotification() {
+        //创建通知渠道
+        createTestStyleChannel()
+        //通知实体
+        val title = "直接回复操作的通知"
+        val content = "点击下面的回复按钮可以直接回复信息"
+        val utils = NotificationUtils.getInstance(this)
+        val builder = utils.createNotification(testStyleChannelId, R.drawable.frank, title, content)
+        //用于直接回复的`RemoteInput.Builder`
+        val remoteInput = RemoteInput.Builder(REPLY_TEXT_KEY).run {
+            setLabel("请输入要回复的内容")
+            build()
+        }
+        //为回复创建PendingIntent
+        val replyRequestCode = 200
+        val intent = Intent(TestMediaStyleBroadcastReceiver::class.java.name)
+        intent.putExtra(REPLY_USER_ID, replyRequestCode)
+        val replyPendingIntent =
+            PendingIntent.getBroadcast(
+                this,
+                replyRequestCode,
+                intent,
+                PendingIntent.FLAG_UPDATE_CURRENT
+            )
+        //创建用于回复的action 并绑定remoteInput
+        val replyAction =
+            NotificationCompat.Action.Builder(R.drawable.ic_icon6, "立即回复", replyPendingIntent)
+                .addRemoteInput(remoteInput)
+                .build()
+        //将action绑定到通知上
+        builder.addAction(replyAction)
+        //发送通知
+        utils.sendNotification(REPLY_NOTIFICATION_ID, builder.build())
+    }
+
+    //创建一个确定结束时间的进度条
+    private val mNotificationUtils by lazy {
+        NotificationUtils.getInstance(this)
+    }
+    private val mWithFinishProgressBuilder by lazy {
+        //创建渠道
+        createTestStyleChannel()
+        mNotificationUtils.createNotification(
+            testStyleChannelId,
+            R.drawable.frank,
+            "进度条通知",
+            "包含进度条的通知"
+        ).run {
+            setOnlyAlertOnce(true)
+        }
+    }
+
+    private var mProgress = 0;
+    private val FINISH_PROGRESS_NOTIFICATION_ID = 4000
+    private val mFinishNotificationHandler by lazy {
+        Handler()
+    }
+
+    private fun createWithFinishNotification() {
+        mWithFinishProgressBuilder.setProgress(100, mProgress, false)
+        mNotificationUtils.sendNotification(
+            FINISH_PROGRESS_NOTIFICATION_ID,
+            mWithFinishProgressBuilder.build()
+        )
+        if (mProgress >= 100) {
+            mFinishNotificationHandler.removeCallbacksAndMessages(null)
+            mNotificationUtils.deleteNotification(FINISH_PROGRESS_NOTIFICATION_ID)
+        } else {
+            mProgress += 10
+            mFinishNotificationHandler.postDelayed({
+                createWithFinishNotification()
+            }, 1000)
+        }
+    }
+
+    //创建不确定结束时间的进度条通知
+    private val INDETERMINATE_NOTIFICATION_ID = 40001
+    private val mIndeterminateBuilder by lazy {
+        createTestStyleChannel()
+        mNotificationUtils.createNotification(
+            testStyleChannelId,
+            R.drawable.frank,
+            "进度条通知",
+            "不确定结束时间的进度条"
+        ).run {
+            setOnlyAlertOnce(true)
+        }
+    }
+
+    private var mTime = 0;
+    private fun createIndeterminateNotification() {
+        mIndeterminateBuilder.setProgress(0, 0, true)
+        mNotificationUtils.sendNotification(
+            INDETERMINATE_NOTIFICATION_ID,
+            mIndeterminateBuilder.build()
+        )
+        if (mTime >= 10 * 1000) {
+            mFinishNotificationHandler.removeCallbacksAndMessages(null)
+            mNotificationUtils.deleteNotification(INDETERMINATE_NOTIFICATION_ID)
+        } else {
+            mFinishNotificationHandler.postDelayed(
+                {
+                    mTime += 1000
+                    createIndeterminateNotification()
+                }, 1000
+            )
+        }
+    }
+
+    //设置锁定屏幕公开范围为private并设置通知的备用版本
+    private fun createPrivateVisibility() {
+        //创建渠道
+        createTestStyleChannel()
+        //创建备用通知
+        val backupBuilder = mNotificationUtils.createNotification(
+            testStyleChannelId,
+            R.drawable.frank,
+            "新消息",
+            "收到三条新消息"
+        )
+        //创建通知
+        val person = Person.Builder().run {
+            setName("Bob")
+            build()
+        }
+        val style = NotificationCompat.MessagingStyle(person).run {
+            addMessage("Hello", System.currentTimeMillis(), person)
+            addMessage("World", System.currentTimeMillis(), person)
+            addMessage("Thanks", System.currentTimeMillis(), person)
+        }
+        val builder = mNotificationUtils.createNotification(
+            testStyleChannelId,
+            R.drawable.frank,
+            "新消息",
+            "收到三条新消息",
+            style
+        ).run {
+            setVisibility(NotificationCompat.VISIBILITY_PRIVATE)
+        }
+        //设置备用通知
+        builder.setPublicVersion(backupBuilder.build())
+        //发送通知
+        mNotificationUtils.sendNotification(builder.build())
+    }
+
+    //显示紧急消息
+    private fun createUrgentNotification() {
+        //创建渠道
+        val channelUtils = ChannelUtils.getInstance(this)
+        channelUtils.createHighDefaultChannel("highChannel","高等级渠道","高等级渠道")
+        createTestStyleChannel()
+        //创建全屏Intent
+        val intent = Intent(this, ImportantActivity::class.java)
+        val fullScreenPendingIntent =
+            PendingIntent.getActivity(this, 10000, intent, PendingIntent.FLAG_UPDATE_CURRENT)
+        //创建通知
+        val utils = NotificationUtils.getInstance(this)
+        val builder =
+            utils.createNotification("highChannel", R.drawable.frank, "紧急通知", "Hello World")
+        //关联全屏Intent
+        builder.setFullScreenIntent(fullScreenPendingIntent, true)
+        builder.setCategory(NotificationCompat.CATEGORY_CALL)
+        //发送通知
+        utils.sendNotification(builder.build())
+
+    }
+
+
     private val operateKey = "MyOperate"
 
     inner class TestMediaStyleBroadcastReceiver : BroadcastReceiver() {
         override fun onReceive(context: Context?, intent: Intent?) {
             Log.e("TAG", "获取到通知")
             Log.e("TAG", "操作:${intent?.getStringExtra(operateKey)}")
+            Log.e("TAG", "回复的用户id:${intent?.getIntExtra(REPLY_USER_ID, -1)}")
+
+            //获取用户回复的内容
+            val replayIntent = RemoteInput.getResultsFromIntent(intent)
+            replayIntent?.let {
+                Log.e("TAG", "用户回复的内容:${it.getCharSequence(REPLY_TEXT_KEY)}")
+                //收到用户回复的内容后更新通知
+                createTestStyleChannel()
+                val utils = NotificationUtils.getInstance(this@SummaryActivity)
+                val builder = utils.createNotification(
+                    testStyleChannelId,
+                    R.drawable.frank,
+                    "直接回复操作的通知",
+                    "回复成功"
+                )
+                utils.sendNotification(REPLY_NOTIFICATION_ID, builder.build())
+                //等待3秒钟删除掉这条通知
+                Handler().postDelayed({
+                    utils.deleteNotification(REPLY_NOTIFICATION_ID)
+                }, 3000)
+            }
         }
     }
 

@@ -139,6 +139,56 @@
                         android:onClick="doClick"
                         android:text="使用媒体控件创建通知"
                         />
+
+                <Button
+                        android:id="@+id/test_have_actions_notification"
+                        style="@style/ButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="doClick"
+                        android:text="包含操作按钮的通知"
+                        />
+                <Button
+                        android:id="@+id/test_have_reply_notification"
+                        style="@style/ButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="doClick"
+                        android:text="包含直接回复的通知"
+                        />
+
+                <Button
+                        android:id="@+id/test_with_finish_notification"
+                        style="@style/ButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="doClick"
+                        android:text="确定结束时间的进度条通知"
+                        />
+                <Button
+                        android:id="@+id/test_indeterminate_notification"
+                        style="@style/ButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="doClick"
+                        android:text="不确定结束时间的进度条通知"
+                        />
+                <Button
+                        android:id="@+id/test_visibility_private_notification"
+                        style="@style/ButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="doClick"
+                        android:text="VISIBILITY_PRIVATE的通知"
+                        />
+                <Button
+                        android:id="@+id/test_urgent_notification"
+                        style="@style/ButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="doClick"
+                        android:text="紧急消息"
+                        />
             </LinearLayout>
         </ScrollView>
     </LinearLayout>

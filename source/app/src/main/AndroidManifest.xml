@@ -12,11 +12,13 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".notification.summary.SpecialActivity"
-                android:launchMode="singleTask"
-                android:taskAffinity=""
+        <activity android:name=".animation.property.PropertyAnimationHomeActivity"></activity>
+        <activity android:name=".animation.AnimationHomeActivity" />
+        <activity
+                android:name=".notification.summary.SpecialActivity"
                 android:excludeFromRecents="true"
-                ></activity>
+                android:launchMode="singleTask"
+                android:taskAffinity="" />
         <activity
                 android:name=".notification.summary.TestTaskStackBuilderActivity2"
                 android:parentActivityName=".notification.summary.TestTaskStackBuilderActivity1" />
@@ -35,7 +37,8 @@
         <activity android:name=".notification.style.BigPictureActivity" />
         <activity
                 android:name=".notification.other.ImportantActivity"
-                android:parentActivityName=".notification.progress.ProgressNotificationActivity" />
+                android:parentActivityName=".notification.progress.ProgressNotificationActivity"
+                android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
         <activity android:name=".notification.other.OtherNotificationActivity" />
         <activity
                 android:name=".notification.progress.ProgressNotificationActivity"
@@ -70,8 +73,6 @@
                 <action android:name="replyNotification" />
             </intent-filter>
         </receiver>
-
-
     </application>
 
 </manifest>

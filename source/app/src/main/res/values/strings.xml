@@ -60,4 +60,9 @@
     <string name="add_test_notification_group">添加测试通知分组的通知</string>
     <string name="test_to_activity">测试跳转Activity</string>
     <string name="test_to_activity_with_task_stack_builder">测试使用TaskStackBuilder跳转Activity</string>
+
+    <!--动画相关字符串-->
+    <string name="about_animation">动画相关</string>
+    <string name="animation_home">动画首页</string>
+    <string name="property_animation">属性动画</string>
 </resources>

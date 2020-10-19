@@ -119,9 +119,9 @@ public class ChannelUtils {
      *
      * @return 默认渠道id
      */
-    public String createHighDefaultChannel() {
-        createChannelWithAll(DEFAULT_CHANNEL_ID, DEFAULT_CHANNEL_NAME, NotificationManager.IMPORTANCE_HIGH, DEFAULT_CHANNEL_DESCRIPTION);
-        return DEFAULT_CHANNEL_ID;
+    public String createHighDefaultChannel(String channelId, String channelName,String description) {
+        createChannelWithAll(channelId, channelName, NotificationManager.IMPORTANCE_HIGH, description);
+        return channelId;
     }
 
     /**

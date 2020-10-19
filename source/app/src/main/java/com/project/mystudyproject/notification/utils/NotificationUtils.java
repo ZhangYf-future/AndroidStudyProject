@@ -77,6 +77,8 @@ public class NotificationUtils {
         builder.setAutoCancel(cancel);
         //重要性，这里需要和渠道中的重要性保持一致
         builder.setPriority(priority);
+        //锁屏显示
+        builder.setVisibility(NotificationCompat.VISIBILITY_PUBLIC);
         //不允许添加默认操作按钮
         builder.setAllowSystemGeneratedContextualActions(false);
         if (!TextUtils.isEmpty(groupKey))
@@ -116,7 +118,7 @@ public class NotificationUtils {
 
 
     //创建一个通知组
-    public NotificationCompat.Builder createNotificationGroup(String channelId, String groupKey, int smallImage, String title, String content,String subText) {
+    public NotificationCompat.Builder createNotificationGroup(String channelId, String groupKey, int smallImage, String title, String content, String subText) {
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, channelId);
         builder.setSmallIcon(smallImage);
         builder.setContentTitle(title);
@@ -169,4 +171,8 @@ public class NotificationUtils {
     }
 
 
+    //删除一条通知
+    public void deleteNotification(int id) {
+        NotificationManagerCompat.from(context).cancel(id);
+    }
 }
