@@ -12,7 +12,9 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".animation.property.PropertyAnimationHomeActivity"></activity>
+        <activity android:name=".view.MaskFilterActivity"></activity>
+        <activity android:name=".animation.property.BasicActivity" />
+        <activity android:name=".animation.property.PropertyAnimationHomeActivity" />
         <activity android:name=".animation.AnimationHomeActivity" />
         <activity
                 android:name=".notification.summary.SpecialActivity"

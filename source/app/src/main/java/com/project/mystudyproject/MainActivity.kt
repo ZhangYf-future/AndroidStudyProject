@@ -6,6 +6,7 @@ import com.hopechart.baselib.ui.BaseActivity
 import com.project.mystudyproject.animation.AnimationHomeActivity
 import com.project.mystudyproject.databinding.ActivityMainBinding
 import com.project.mystudyproject.notification.home.NotificationHomeActivity
+import com.project.mystudyproject.view.MaskFilterActivity
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
 
@@ -19,6 +20,9 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
             }
             R.id.btn_about_animation -> {
                 startActivity(Intent(this, AnimationHomeActivity::class.java))
+            }
+            R.id.btn_mask_filter -> {
+                startActivity(Intent(this, MaskFilterActivity::class.java))
             }
         }
     }

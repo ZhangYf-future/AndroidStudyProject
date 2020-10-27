@@ -65,4 +65,11 @@
     <string name="about_animation">动画相关</string>
     <string name="animation_home">动画首页</string>
     <string name="property_animation">属性动画</string>
+    <string name="property_animation_basic">属性动画基本操作</string>
+    <string name="use_value_animator">使用ValueAnimator添加动画效果</string>
+    <string name="use_value_animator_of_object">使用ValueAnimator.ofObject添加动画效果</string>
+    <string name="use_value_animator_to_margin">使用ValueAnimator改变View的左右Margin</string>
+    <string name="use_object_animator_to_move">使用ObjectAnimator移动View</string>
+    <string name="use_animator_set">使用AnimatorSet编排多个动画</string>
+    <string name="add_animator_to_view_group">为ViewGroup添加布局更改时的动画</string>
 </resources>
