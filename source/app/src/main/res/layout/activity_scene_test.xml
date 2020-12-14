@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--动画 场景测试页面-->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context=".animation.property.transition.SceneTestActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            style="@style/match_parent"
+            >
+
+        <include
+                android:id="@+id/layout_title"
+                layout="@layout/layout_title"
+                app:title="@{@string/use_transition_animation}"
+                />
+
+        <!--场景操作根布局-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/scene_layout"
+                style="@style/match_width_constrain"
+                app:layout_constraintTop_toBottomOf="@id/layout_title"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                >
+
+            <include
+                    layout="@layout/layout_scene_test_a"
+                    />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+                android:id="@+id/btn_change_first_layout"
+                app:layout_constraintTop_toBottomOf="@id/scene_layout"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                style="@style/ButtonStyleConstrain"
+                android:text="@string/change_first_layout"
+                android:onClick="doClick"
+                />
+
+        <Button
+                android:id="@+id/btn_change_second_layout"
+                app:layout_constraintTop_toBottomOf="@id/btn_change_first_layout"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                style="@style/ButtonStyleConstrain"
+                android:text="@string/change_second_layout"
+                android:onClick="doClick"
+                />
+
+        <Button
+                android:id="@+id/btn_create_scene_with_code"
+                app:layout_constraintTop_toBottomOf="@id/btn_change_second_layout"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                style="@style/ButtonStyleConstrain"
+                android:text="@string/create_scene_with_code"
+                android:onClick="doClick"
+                />
+
+        <Button
+                android:id="@+id/btn_create_scene_function"
+                app:layout_constraintTop_toBottomOf="@id/btn_create_scene_with_code"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:text="@string/create_scene_function"
+                style="@style/ButtonStyleConstrain"
+                android:onClick="doClick"
+                />
+
+        <Button
+                android:id="@+id/btn_use_transition_with_resource"
+                app:layout_constraintTop_toBottomOf="@id/btn_create_scene_function"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:text="@string/use_transition_with_resource"
+                style="@style/ButtonStyleConstrain"
+                android:onClick="doClick"
+                />
+
+        <Button
+                android:id="@+id/btn_remove_transition_target"
+                app:layout_constraintTop_toBottomOf="@id/btn_use_transition_with_resource"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:text="@string/remove_transition_target"
+                style="@style/ButtonStyleConstrain"
+                android:onClick="doClick"
+                />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

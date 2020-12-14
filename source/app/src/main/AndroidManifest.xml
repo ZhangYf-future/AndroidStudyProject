@@ -12,7 +12,13 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".view.MaskFilterActivity"></activity>
+        <activity android:name=".animation.property.transition.LaunchActivityWithAnimation2Activity"></activity>
+        <activity android:name=".animation.property.transition.LaunchActivityWithAnimation1Activity" />
+        <activity android:name=".animation.property.transition.SceneTestActivity" />
+        <activity android:name=".animation.property.transition.LayoutTransitionActivity" />
+        <activity android:name=".animation.property.MoveAnimatorActivity" />
+        <activity android:name=".animation.property.ShowOrHideViewActivity" />
+        <activity android:name=".view.MaskFilterActivity" />
         <activity android:name=".animation.property.BasicActivity" />
         <activity android:name=".animation.property.PropertyAnimationHomeActivity" />
         <activity android:name=".animation.AnimationHomeActivity" />

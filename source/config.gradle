@@ -38,7 +38,10 @@ ext {
             xRecyclerView          : "1.6.0",
 
             //androidx 的media2库
-            androidx_media2_version: "1.0.3"
+            androidx_media2_version: "1.0.3",
+
+            //基于物理特性的动画API
+            androidx_dynamic_animation_version: "1.0.0-alpha03",
     ]
 
     dependencies = [
@@ -64,7 +67,10 @@ ext {
             //androidx media库
             androidx_media2_session: "androidx.media2:media2-session:${versions["androidx_media2_version"]}",
             androidx_media2_widget : "androidx.media2:media2-widget:${versions["androidx_media2_version"]}",
-            androidx_media2_player : "androidx.media2:media2-player:${versions["androidx_media2_version"]}"
+            androidx_media2_player : "androidx.media2:media2-player:${versions["androidx_media2_version"]}",
+
+            //基于物理特性的动画API
+            androidx_dynamic_animation: "androidx.dynamicanimation:dynamicanimation-ktx:${versions["androidx_dynamic_animation_version"]}",
     ]
 
     sign = [

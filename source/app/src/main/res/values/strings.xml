@@ -72,4 +72,59 @@
     <string name="use_object_animator_to_move">使用ObjectAnimator移动View</string>
     <string name="use_animator_set">使用AnimatorSet编排多个动画</string>
     <string name="add_animator_to_view_group">为ViewGroup添加布局更改时的动画</string>
+    <string name="load_animator_with_xml">从XML文件中加载动画资源并设置到View上</string>
+    <string name="load_animation_with_xml">从XML文件中加载视图动画资源并设置到View上</string>
+    <string name="use_my_interpolator">使用自定义的插值器</string>
+    <string name="load_animation_list_with_XML">从XML文件中加载逐帧动画并设置到View上</string>
+    <string name="use_state_list_animator">使用StateListAnimator为视图状态更改添加动画</string>
+    <string name="use_my_type_evaluator_implement_margin">使用自定义的TypeEvaluator</string>
+    <string name="use_property_values_holder">使用PropertyValuesHolder设置动画</string>
+    <string name="use_key_frame">使用关键帧来构建动画</string>
+    <string name="use_animator_set_more_animator">使用组合动画实现View向右移动一半宽度并变为2倍大小</string>
+    <string name="use_property_values_holder_more_animator">使用PropertyValuesHolder实现View向右移动一半宽度并变为2倍大小</string>
+    <string name="use_view_property_animator_more_animator">使用ViewPropertyAnimator实现View向右移动一半宽度并变为2倍大小</string>
+    <string name="use_animator_show_or_hide_view">使用动画显示或隐藏视图</string>
+    <string name="use_fade_in_fade_out_animator">下面是使用淡入淡出动画</string>
+    <string name="test_use_fade_in_fade_out_animator_text">
+        这里是测试使用淡入淡出动画时的文本，这里是测试使用淡入淡出动画时的文本，这里是测试使用淡入淡出动画时的文本，这里是测试使用淡入淡出动画时的文本，这里是测试使用淡入淡出动画时的文本，
+        这里是测试使用淡入淡出动画时的文本，这里是测试使用淡入淡出动画时的文本，这里是测试使用淡入淡出动画时的文本，这里是测试使用淡入淡出动画时的文本，这里是测试使用淡入淡出动画时的文本，
+        这里是测试使用淡入淡出动画时的文本，这里是测试使用淡入淡出动画时的文本，这里是测试使用淡入淡出动画时的文本，这里是测试使用淡入淡出动画时的文本，这里是测试使用淡入淡出动画时的文本，
+        这里是测试使用淡入淡出动画时的文本，这里是测试使用淡入淡出动画时的文本，这里是测试使用淡入淡出动画时的文本，这里是测试使用淡入淡出动画时的文本，这里是测试使用淡入淡出动画时的文本，
+        这里是测试使用淡入淡出动画时的文本，这里是测试使用淡入淡出动画时的文本，这里是测试使用淡入淡出动画时的文本，这里是测试使用淡入淡出动画时的文本，这里是测试使用淡入淡出动画时的文本，
+        这里是测试使用淡入淡出动画时的文本，这里是测试使用淡入淡出动画时的文本，这里是测试使用淡入淡出动画时的文本，这里是测试使用淡入淡出动画时的文本，这里是测试使用淡入淡出动画时的文本，
+    </string>
+
+    <string name="card_front">卡片正面</string>
+    <string name="show_card_front">显示卡片正面</string>
+    <string name="show_card_back">显示卡片背面</string>
+    <string name="show_view_with_circle_animator">使用圆形揭露动画显示视图</string>
+    <string name="hide_view_with_circle_animator">使用圆形揭露动画隐藏视图</string>
+    <string name="use_animator_move_view">使用动画移动视图</string>
+    <string name="move_in_x">横向移动</string>
+    <string name="move_in_y">纵向移动</string>
+    <string name="move_together">同时移动</string>
+    <string name="i_am_move_view">我是被移动的View</string>
+    <string name="use_path_interpolator_move_view">使用PathInterpolator移动视图</string>
+    <string name="use_animator_implement_animator_path">使用ObjectAnimator来实现自定义的动画路径</string>
+    <string name="use_path_interpolator_create_fall_anim">使用PathInterpolator创建跌落动画</string>
+    <string name="create_fling_animation">创建一个投掷动画</string>
+    <string name="create_simple_spring_animation">创建一个简单的弹性动画</string>
+    <string name="create_spring_aniamtion_register_listener">创建弹性动画并注册监听器</string>
+    <string name="create_spring_animation_set_spring_force">创建弹性动画并设置阻尼比</string>
+
+    <string name="layout_change_add_animation">为布局修改添加动画</string>
+    <string name="add_view_into_linear_layout">添加View到布局中</string>
+    <string name="this_is_add_view">这是添加进来的View</string>
+    <string name="set_custom_layout_change_animation">设置自定义的布局更改动画</string>
+
+    <string name="use_transition_animation">使用过渡动画</string>
+    <string name="use_scene_change_layout">使用场景切换布局</string>
+    <string name="change_first_layout">切换第一个布局</string>
+    <string name="change_second_layout">切换第二个布局</string>
+    <string name="create_scene_with_code">使用代码创建场景</string>
+    <string name="create_scene_function">创建场景操作</string>
+    <string name="use_transition_with_resource">使用在资源文件中创建的过渡实例</string>
+    <string name="remove_transition_target">移除不想应用过渡效果的视图</string>
+
+    <string name="launch_activity_with_animation">使用动画启动Activity</string>
 </resources>

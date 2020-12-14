@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--顺序执行-->
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+        android:ordering="sequentially"
+        >
+    <!--位置移动的动画-->
+    <!--同时执行-->
+    <set
+            android:ordering="together"
+            >
+
+        <objectAnimator
+                android:propertyName="translationX"
+                android:valueTo="200"
+                android:duration="500"
+                android:valueType="floatType"
+                />
+        <objectAnimator
+                android:propertyName="translationY"
+                android:valueTo="200"
+                android:duration="500"
+                android:valueType="floatType"
+                />
+
+    </set>
+    <!--颜色变化的动画-->
+    <objectAnimator
+            android:propertyName="backgroundColor"
+            android:valueFrom="#ff0000"
+            android:valueTo="#00ff00"
+            android:duration="1000"
+            />
+</set>

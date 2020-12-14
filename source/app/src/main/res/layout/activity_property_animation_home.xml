@@ -39,6 +39,28 @@
                             android:onClick="doClick"
                             />
 
+                    <Button
+                            android:id="@+id/btn_use_animator_show_or_hide_view"
+                            android:text="@string/use_animator_show_or_hide_view"
+                            style="@style/ButtonStyle"
+                            android:onClick="doClick"
+                            />
+
+                    <Button
+                            android:id="@+id/btn_use_animator_move"
+                            style="@style/ButtonStyle"
+                            android:text="@string/use_animator_move_view"
+                            android:onClick="doClick"
+                            />
+                    <Button
+                            android:id="@+id/btn_layout_change_add_animation"
+                            style="@style/ButtonStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:onClick="doClick"
+                            android:text="@string/layout_change_add_animation"
+                            />
+
                 </LinearLayout>
 
         </ScrollView>

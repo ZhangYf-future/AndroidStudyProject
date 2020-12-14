@@ -2,11 +2,17 @@ package com.project.mystudyproject.animation.property
 
 import android.animation.*
 import android.annotation.SuppressLint
+import android.graphics.drawable.Animatable
 import android.text.Layout
 import android.transition.Transition
+import android.util.Log
 import android.view.View
 import android.view.ViewGroup
+import android.view.ViewPropertyAnimator
+import android.view.animation.AccelerateDecelerateInterpolator
 import android.view.animation.AnimationSet
+import android.view.animation.AnimationUtils
+import android.view.animation.OvershootInterpolator
 import android.widget.Button
 import android.widget.LinearLayout
 import androidx.core.animation.addListener
@@ -36,6 +42,26 @@ class BasicActivity : BaseActivity<ActivityBasicBinding>() {
                 createAnimatorSet()
             R.id.btn_add_animator_to_view_group ->
                 addAnimatorToViewGroup()
+            R.id.btn_load_animator_with_xml ->
+                loadAnimatorWithXML()
+            R.id.btn_load_animation_with_xml ->
+                loadAnimationWithXML()
+            R.id.btn_load_my_interpolator ->
+                useMyInterpolator()
+            R.id.btn_load_animation_list_with_xml ->
+                loadAnimationListWithXML()
+            R.id.btn_use_my_type_evaluator ->
+                useMyTypeEvaluator()
+            R.id.btn_use_property_values_holder ->
+                usePropertyValuesHolder()
+            R.id.btn_use_key_frame ->
+                useKeyFrame()
+            R.id.btn_use_animator_set_more_animator ->
+                useAnimatorSetMoreAnimator()
+            R.id.btn_use_property_values_holder_more_animator ->
+                usePropertyValuesHolderMoreAnimator()
+            R.id.btn_use_view_property_animator_more_animator ->
+                useViewPropertyAnimatorMoreAnimator()
         }
     }
 
@@ -172,4 +198,148 @@ class BasicActivity : BaseActivity<ActivityBasicBinding>() {
         mViewInAnimator.target = button
         mBinding.testViewGrouoAnimator.addView(button)
     }
+
+    //从XML文件中添加一个属性动画资源并设置到View上
+    private fun loadAnimatorWithXML() {
+        AnimatorInflater.loadAnimator(this, R.animator.animator_view_translation_alpha).apply {
+            setTarget(mBinding.btnLoadAnimatorWithXml)
+            start()
+        }
+    }
+
+    //从XML文件中添加一个视图动画资源并设置到View上
+    private fun loadAnimationWithXML() {
+        val animAll = AnimationUtils.loadAnimation(this, R.anim.anim_all)
+        mBinding.btnLoadAnimationWithXml.startAnimation(animAll)
+    }
+
+    //使用自定义的插值器
+    private fun useMyInterpolator() {
+        val anim = AnimationUtils.loadAnimation(this, R.anim.view_scale)
+        mBinding.btnLoadMyInterpolator.startAnimation(anim)
+    }
+
+    //加载逐帧动画并启动
+    private fun loadAnimationListWithXML() {
+        val backResource = mBinding.btnLoadAnimationListWithXml.background
+        if (backResource is Animatable) {
+            backResource.start()
+        }
+    }
+
+    //加载并设置视图状态变更的动画资源
+    private fun loadStateListAnimator() {
+        val stateListAnimator =
+            AnimatorInflater.loadStateListAnimator(this, R.drawable.animator_scale)
+        mBinding.btnUseStateListAnimator.stateListAnimator = stateListAnimator
+    }
+
+    //使用自定义的TypeEvaluator来设置View的Margin
+    private fun useMyTypeEvaluator() {
+        val marginParams =
+            mBinding.btnUseMyTypeEvaluator.layoutParams as LinearLayout.LayoutParams
+
+        val endParams = LinearLayout.LayoutParams(marginParams)
+        endParams.leftMargin += 200
+        endParams.rightMargin += 200
+
+        val animator = ValueAnimator.ofObject(
+            TypeEvaluator<ViewGroup.MarginLayoutParams> { fraction, startValue, endValue ->
+                val params = LinearLayout.LayoutParams(startValue)
+                val left =
+                    startValue.leftMargin + (endValue.leftMargin - startValue.leftMargin) * fraction
+                val right =
+                    startValue.rightMargin + (endValue.rightMargin - startValue.rightMargin) * fraction
+                val top =
+                    startValue.topMargin + (endValue.topMargin - startValue.topMargin) * fraction
+                val bottom =
+                    startValue.bottomMargin + (endValue.bottomMargin - startValue.bottomMargin) * fraction
+                params.leftMargin = left.toInt()
+                params.topMargin = top.toInt()
+                params.rightMargin = right.toInt()
+                params.bottomMargin = bottom.toInt()
+                params
+            },
+            marginParams, endParams
+        )
+        animator.addUpdateListener {
+            val params = it.animatedValue as ViewGroup.LayoutParams
+            mBinding.btnUseMyTypeEvaluator.layoutParams = params
+        }
+
+        animator.interpolator = OvershootInterpolator()
+        animator.duration = 1000
+        animator.start()
+
+
+    }
+
+    //使用PropertyValuesHolder设置动画
+    private fun usePropertyValuesHolder() {
+        val holder1 = PropertyValuesHolder.ofFloat("translationX", 0f, 10f, 100f)
+        val holder2 = PropertyValuesHolder.ofFloat("translationY", 0f, 10f, 100f)
+
+        ObjectAnimator.ofPropertyValuesHolder(mBinding.btnUseMyTypeEvaluator, holder1, holder2)
+            .apply {
+                interpolator = OvershootInterpolator()
+                duration = 5 * 1000
+                start()
+            }
+    }
+
+    //使用关键帧来构建动画
+    private fun useKeyFrame() {
+        //定义关键帧
+        val keyFrame1 = Keyframe.ofFloat(0f, 0f)
+        val keyFrame2 = Keyframe.ofFloat(0.5f, 30f)
+        val keyFrame3 = Keyframe.ofFloat(1.0f, 360f)
+        //获取PropertyValuesHolder对象
+        val holder = PropertyValuesHolder.ofKeyframe("rotation", keyFrame1, keyFrame2, keyFrame3)
+        //构建动画并开始执行
+        ObjectAnimator.ofPropertyValuesHolder(mBinding.btnUseKeyFrame, holder).apply {
+            interpolator = AccelerateDecelerateInterpolator()
+            duration = 5 * 1000
+            start()
+        }
+    }
+
+    //使用AnimatorSet实现组合动画
+    private fun useAnimatorSetMoreAnimator() {
+        val target = mBinding.btnUseAnimatorSetMoreAnimator
+        val translationAnimator =
+            ObjectAnimator.ofFloat(target, "translationX", target.measuredWidth.toFloat() / 2)
+        val scaleXAnimator = ObjectAnimator.ofFloat(target, "scaleX", 2f)
+        val scaleYAnimator = ObjectAnimator.ofFloat(target, "scaleY", 2f)
+        val set = AnimatorSet()
+        set.play(translationAnimator).with(scaleXAnimator).with(scaleYAnimator)
+        set.interpolator = OvershootInterpolator()
+        set.duration = 5000
+        set.start()
+    }
+
+    //使用PropertyValuesHolder实现组合动画
+    private fun usePropertyValuesHolderMoreAnimator() {
+        val target = mBinding.btnUsePropertyValuesHolderMoreAnimator
+        val translationHolder =
+            PropertyValuesHolder.ofFloat("translationX", target.measuredWidth.toFloat() / 2)
+        val scaleXHolder = PropertyValuesHolder.ofFloat("scaleX", 2.0f)
+        val scaleYHolder = PropertyValuesHolder.ofFloat("scaleY", 2.0f)
+        ObjectAnimator.ofPropertyValuesHolder(target, translationHolder, scaleXHolder, scaleYHolder)
+            .apply {
+                interpolator = OvershootInterpolator()
+                duration = 5 * 1000
+                start()
+            }
+    }
+
+    //使用ViewPropertyAnimator实现组合动画
+    private fun useViewPropertyAnimatorMoreAnimator() {
+        val target = mBinding.btnUseViewPropertyAnimatorMoreAnimator
+        target.animate()
+            .translationX(target.measuredWidth.toFloat() / 2)
+            .scaleX(2f)
+            .scaleY(2f)
+            .start()
+    }
+
 }

@@ -6,96 +6,198 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
+            android:layout_height="match_parent">
 
         <include
                 android:id="@+id/title"
                 layout="@layout/layout_title"
-                app:title="@{@string/property_animation_basic}"
-                />
+                app:title="@{@string/property_animation_basic}" />
 
         <ScrollView
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layout_constraintTop_toBottomOf="@id/title"
+                android:fillViewport="true"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                >
+                app:layout_constraintTop_toBottomOf="@id/title">
+
             <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    >
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
                 <Button
                         android:id="@+id/btn_value_animator"
+                        style="@style/ButtonStyle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        style="@style/ButtonStyle"
                         android:onClick="doClick"
-                        android:textAllCaps="false"
                         android:text="@string/use_value_animator"
-                        />
+                        android:textAllCaps="false" />
 
                 <Button
                         android:id="@+id/btn_value_animator_of_object"
+                        style="@style/ButtonStyle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        style="@style/ButtonStyle"
                         android:onClick="doClick"
-                        android:textAllCaps="false"
                         android:text="@string/use_value_animator_of_object"
-                        />
+                        android:textAllCaps="false" />
 
                 <Button
                         android:id="@+id/btn_use_value_animator_to_Margin"
+                        style="@style/ButtonStyle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        style="@style/ButtonStyle"
-                        android:text="@string/use_value_animator_to_margin"
-                        android:textAllCaps="false"
                         android:onClick="doClick"
-                        />
+                        android:text="@string/use_value_animator_to_margin"
+                        android:textAllCaps="false" />
 
                 <Button
                         android:id="@+id/btn_use_object_animator_to_move"
+                        style="@style/ButtonStyle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        style="@style/ButtonStyle"
-                        android:text="@string/use_object_animator_to_move"
-                        android:textAllCaps="false"
                         android:onClick="doClick"
-                        />
+                        android:text="@string/use_object_animator_to_move"
+                        android:textAllCaps="false" />
 
                 <Button
                         android:id="@+id/btn_use_animator_set"
+                        style="@style/ButtonStyle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        style="@style/ButtonStyle"
-                        android:text="@string/use_animator_set"
-                        android:textAllCaps="false"
                         android:onClick="doClick"
-                        />
+                        android:text="@string/use_animator_set"
+                        android:textAllCaps="false" />
 
                 <Button
                         android:id="@+id/btn_add_animator_to_view_group"
+                        style="@style/ButtonStyle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        style="@style/ButtonStyle"
-                        android:text="@string/add_animator_to_view_group"
-                        android:textAllCaps="false"
                         android:onClick="doClick"
-                        />
+                        android:text="@string/add_animator_to_view_group"
+                        android:textAllCaps="false" />
 
                 <LinearLayout
                         android:id="@+id/test_view_grouo_animator"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
                         android:animateLayoutChanges="true"
-                        />
+                        android:orientation="vertical" />
+
+                <Button
+                        android:id="@+id/btn_load_animator_with_xml"
+                        style="@style/ButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="doClick"
+                        android:text="@string/load_animator_with_xml"
+                        android:textAllCaps="false" />
+
+                <Button
+                        android:id="@+id/btn_load_animation_with_xml"
+                        style="@style/ButtonStyle"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:onClick="doClick"
+                        android:text="@string/load_animation_with_xml"
+                        android:textAllCaps="false" />
+
+                <Button
+                        android:id="@+id/btn_load_my_interpolator"
+                        style="@style/ButtonStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="80dp"
+                        android:onClick="doClick"
+                        android:text="@string/use_my_interpolator" />
+
+                <Button
+                        android:id="@+id/btn_load_animation_list_with_xml"
+                        style="@style/ButtonStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/animation_list_view_bakground"
+                        android:onClick="doClick"
+                        android:text="@string/load_animation_list_with_XML"
+                        android:textAllCaps="false" />
+
+                <Button
+                        android:id="@+id/btn_use_state_list_animator"
+                        style="@style/ButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="doClick"
+                        android:stateListAnimator="@drawable/animator_scale"
+                        android:text="@string/use_state_list_animator"
+                        android:textAllCaps="false" />
+
+                <Button
+                        android:id="@+id/btn_use_my_type_evaluator"
+                        style="@style/ButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:onClick="doClick"
+                        android:text="@string/use_my_type_evaluator_implement_margin"
+                        android:textAllCaps="false" />
+
+                <Button
+                        android:id="@+id/btn_use_property_values_holder"
+                        style="@style/ButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="doClick"
+                        android:text="@string/use_property_values_holder"
+                        android:textAllCaps="false" />
+
+                <Button
+                        android:id="@+id/btn_use_key_frame"
+                        style="@style/ButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="30dp"
+                        android:onClick="doClick"
+                        android:text="@string/use_key_frame"
+                        android:textAllCaps="false" />
+
+                <Button
+                        android:id="@+id/btn_use_animator_set_more_animator"
+                        style="@style/ButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="30dp"
+                        android:onClick="doClick"
+                        android:text="@string/use_animator_set_more_animator"
+                        android:textAllCaps="false" />
+
+                <Button
+                        android:id="@+id/btn_use_property_values_holder_more_animator"
+                        style="@style/ButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="30dp"
+                        android:onClick="doClick"
+                        android:text="@string/use_property_values_holder_more_animator"
+                        android:textAllCaps="false" />
+
+                <Button
+                        android:id="@+id/btn_use_view_property_animator_more_animator"
+                        style="@style/ButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:onClick="doClick"
+                        android:text="@string/use_view_property_animator_more_animator"
+                        android:textAllCaps="false" />
+
 
 
             </LinearLayout>

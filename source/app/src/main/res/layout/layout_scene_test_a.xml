@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            style="@style/match_width"
+            >
+
+        <TextView
+                style="@style/match_width_constrain"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:text="Scene测试第一个页面"
+                android:padding="20dp"
+                android:background="@color/color_454f63"
+                android:textColor="@color/color_white"
+                android:gravity="center"
+                />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
