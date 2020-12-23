@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/test_c_parent"
+            style="@style/match_width"
+            >
+
+        <TextView
+                android:id="@+id/test_c_text_view_1"
+                style="@style/match_width_constrain"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:text="Scene测试第三个页面"
+                android:padding="20dp"
+                android:background="@color/color_454f63"
+                android:textColor="@color/color_white"
+                android:gravity="center"
+                />
+
+        <ImageView
+                android:id="@+id/test_c_image_view_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/test_c_text_view_1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:contentDescription="@null"
+                android:src="@mipmap/ic_launcher"
+                />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_content"
+                style="@style/match_width_constrain"
+                app:layout_constraintTop_toBottomOf="@id/test_c_image_view_1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                >
+
+            <TextView
+                    android:id="@+id/tv_2"
+                    style="@style/match_width_constrain"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:text="我是不想使用动画的View"
+                    android:background="@color/color_4581F9"
+                    android:textColor="@color/color_white"
+                    android:gravity="center"
+                    app:layout_constraintRight_toLeftOf="@id/tv_3"
+                    android:paddingVertical="20dp"
+                    />
+            <TextView
+                    android:id="@+id/tv_3"
+                    style="@style/match_width_constrain"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tv_2"
+                    app:layout_constraintLeft_toRightOf="@id/tv_2"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:textColor="@color/color_white"
+                    android:text="我也是不想使用动画的View"
+                    android:gravity="center"
+                    android:background="@color/color_4581F9"
+                    android:paddingVertical="20dp"
+                    android:layout_marginStart="20dp"
+                    />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

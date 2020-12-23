@@ -7,89 +7,146 @@
         tools:context=".animation.property.transition.SceneTestActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-            style="@style/match_parent"
-            >
+            android:id="@+id/parent_content"
+            style="@style/match_parent">
 
         <include
                 android:id="@+id/layout_title"
                 layout="@layout/layout_title"
-                app:title="@{@string/use_transition_animation}"
-                />
+                app:title="@{@string/use_transition_animation}" />
 
         <!--场景操作根布局-->
         <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/scene_layout"
                 style="@style/match_width_constrain"
-                app:layout_constraintTop_toBottomOf="@id/layout_title"
+                android:animateLayoutChanges="true"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                >
+                app:layout_constraintTop_toBottomOf="@id/layout_title">
 
-            <include
-                    layout="@layout/layout_scene_test_a"
-                    />
+            <include layout="@layout/layout_scene_test_b" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <Button
-                android:id="@+id/btn_change_first_layout"
-                app:layout_constraintTop_toBottomOf="@id/scene_layout"
+        <ScrollView
+                style="@style/match_parent_constrain"
+                android:fillViewport="true"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                style="@style/ButtonStyleConstrain"
-                android:text="@string/change_first_layout"
-                android:onClick="doClick"
-                />
+                app:layout_constraintTop_toBottomOf="@id/scene_layout">
 
-        <Button
-                android:id="@+id/btn_change_second_layout"
-                app:layout_constraintTop_toBottomOf="@id/btn_change_first_layout"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                style="@style/ButtonStyleConstrain"
-                android:text="@string/change_second_layout"
-                android:onClick="doClick"
-                />
+            <androidx.constraintlayout.widget.ConstraintLayout style="@style/match_width">
 
-        <Button
-                android:id="@+id/btn_create_scene_with_code"
-                app:layout_constraintTop_toBottomOf="@id/btn_change_second_layout"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                style="@style/ButtonStyleConstrain"
-                android:text="@string/create_scene_with_code"
-                android:onClick="doClick"
-                />
+                <Button
+                        android:id="@+id/btn_change_first_layout"
+                        style="@style/ButtonStyleConstrain"
+                        android:onClick="doClick"
+                        android:text="@string/change_first_layout"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-                android:id="@+id/btn_create_scene_function"
-                app:layout_constraintTop_toBottomOf="@id/btn_create_scene_with_code"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                android:text="@string/create_scene_function"
-                style="@style/ButtonStyleConstrain"
-                android:onClick="doClick"
-                />
+                <Button
+                        android:id="@+id/btn_change_second_layout"
+                        style="@style/ButtonStyleConstrain"
+                        android:onClick="doClick"
+                        android:text="@string/change_second_layout"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/btn_change_first_layout" />
 
-        <Button
-                android:id="@+id/btn_use_transition_with_resource"
-                app:layout_constraintTop_toBottomOf="@id/btn_create_scene_function"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                android:text="@string/use_transition_with_resource"
-                style="@style/ButtonStyleConstrain"
-                android:onClick="doClick"
-                />
+                <Button
+                        android:id="@+id/btn_create_scene_with_code"
+                        style="@style/ButtonStyleConstrain"
+                        android:onClick="doClick"
+                        android:text="@string/create_scene_with_code"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/btn_change_second_layout" />
 
-        <Button
-                android:id="@+id/btn_remove_transition_target"
-                app:layout_constraintTop_toBottomOf="@id/btn_use_transition_with_resource"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                android:text="@string/remove_transition_target"
-                style="@style/ButtonStyleConstrain"
-                android:onClick="doClick"
-                />
+                <Button
+                        android:id="@+id/btn_create_scene_function"
+                        style="@style/ButtonStyleConstrain"
+                        android:onClick="doClick"
+                        android:text="@string/create_scene_function"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/btn_create_scene_with_code" />
+
+                <Button
+                        android:id="@+id/btn_use_transition_with_resource"
+                        style="@style/ButtonStyleConstrain"
+                        android:onClick="doClick"
+                        android:text="@string/use_transition_with_resource"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/btn_create_scene_function" />
+
+                <Button
+                        android:id="@+id/btn_remove_transition_target"
+                        style="@style/ButtonStyleConstrain"
+                        android:onClick="doClick"
+                        android:text="@string/remove_transition_target"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/btn_use_transition_with_resource" />
+
+                <Button
+                        android:id="@+id/btn_add_transition_target"
+                        style="@style/ButtonStyleConstrain"
+                        android:onClick="doClick"
+                        android:text="@string/add_transition_target"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/btn_remove_transition_target" />
+
+                <Button
+                        android:id="@+id/btn_use_transition_set_change_layout"
+                        style="@style/ButtonStyleConstrain"
+                        android:onClick="doClick"
+                        android:text="@string/use_transition_set_change_layout"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/btn_add_transition_target" />
+
+                <Button
+                        android:id="@+id/btn_use_transition_in_current_layout"
+                        style="@style/ButtonStyleConstrain"
+                        android:onClick="doClick"
+                        android:text="@string/use_transition_in_current_layout"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/btn_use_transition_set_change_layout" />
+
+                <Button
+                        android:id="@+id/btn_listenering_transition_life"
+                        style="@style/ButtonStyleConstrain"
+                        android:onClick="doClick"
+                        android:text="@string/listenering_transition_life"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/btn_use_transition_in_current_layout" />
+
+                <Button
+                        android:id="@+id/btn_use_custom_transition"
+                        style="@style/ButtonStyleConstrain"
+                        android:onClick="doClick"
+                        android:text="@string/use_custom_transition"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/btn_listenering_transition_life" />
+                <Button
+                        android:id="@+id/btn_show_first_layout_with_custom_transition"
+                        style="@style/ButtonStyleConstrain"
+                        android:onClick="doClick"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:text="@string/show_first_layout_with_custom_transition"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/btn_use_custom_transition"
+                        />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

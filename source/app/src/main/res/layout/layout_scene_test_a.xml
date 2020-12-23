@@ -3,12 +3,26 @@
         xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/test_a_parent"
             style="@style/match_width"
             >
 
-        <TextView
-                style="@style/match_width_constrain"
+
+        <ImageView
+                android:id="@+id/image_view_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:src="@mipmap/ic_launcher"
+                android:contentDescription="@null"
+                />
+
+        <TextView
+                android:id="@+id/text_view_1"
+                style="@style/match_width_constrain"
+                app:layout_constraintTop_toBottomOf="@id/image_view_1"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 android:text="Scene测试第一个页面"

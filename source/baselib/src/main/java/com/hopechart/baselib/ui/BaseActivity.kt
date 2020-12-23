@@ -45,7 +45,6 @@ abstract class BaseActivity<D : ViewDataBinding> : FragmentActivity() {
 
     //设置数据 默认空实现
     protected open fun initData() {
-
     }
 
     open fun doClick(view: View) {

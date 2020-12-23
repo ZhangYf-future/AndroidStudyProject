@@ -125,6 +125,20 @@
     <string name="create_scene_function">创建场景操作</string>
     <string name="use_transition_with_resource">使用在资源文件中创建的过渡实例</string>
     <string name="remove_transition_target">移除不想应用过渡效果的视图</string>
+    <string name="add_transition_target">添加想要应用过渡效果的视图</string>
+    <string name="use_transition_set_change_layout">使用过渡集更改布局</string>
+    <string name="use_transition_in_current_layout">当前布局添加或者删除View时使用过渡</string>
+    <string name="listenering_transition_life">监听过渡的生命周期</string>
+    <string name="use_custom_transition">使用自定义过渡</string>
+    <string name="show_first_layout_with_custom_transition">使用自定义过渡显示第一个布局</string>
 
     <string name="launch_activity_with_animation">使用动画启动Activity</string>
+
+
+    <!--自定义View相关的部分-->
+    <string name="custom_view">自定义View</string>
+    <string name="custom_view_home">自定义View首页</string>
+    <string name="simple_custom_view">一些简单的自定义View</string>
+    <string name="rect_study">矩形RectF和Rect学习</string>
+    <string name="path_study">Path学习</string>
 </resources>

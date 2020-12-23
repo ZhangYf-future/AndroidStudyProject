@@ -3,11 +3,11 @@
         xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/test_b_content"
+            android:id="@+id/test_b_parent"
             style="@style/match_width"
             >
         <TextView
-                android:id="@+id/tv1"
+                android:id="@+id/text_view_1"
                 style="@style/match_width_constrain"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
@@ -20,16 +20,15 @@
                 />
 
         <ImageView
-                android:id="@+id/image_view"
+                android:id="@+id/image_view_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/tv1"
+                app:layout_constraintTop_toBottomOf="@id/text_view_1"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 android:contentDescription="@null"
                 android:src="@mipmap/ic_launcher"
                 />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>
