@@ -46,6 +46,29 @@
                         app:layout_constraintRight_toRightOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/test_path_view_2" />
 
+                <com.project.mystudyproject.view.test_path.TestPathView4
+                        android:id="@+id/test_path_view_4"
+                        android:layout_width="0dp"
+                        android:layout_height="100dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/test_path_view_3" />
+
+                <com.project.mystudyproject.view.test_path.TestPathView5
+                        android:id="@+id/test_path_view_5"
+                        android:layout_width="0dp"
+                        android:layout_height="100dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/test_path_view_4" />
+
+                <com.project.mystudyproject.view.test_path.TestPathView6
+                        android:id="@+id/test_path_view_6"
+                        android:layout_width="0dp"
+                        android:layout_height="100dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/test_path_view_5" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </ScrollView>
