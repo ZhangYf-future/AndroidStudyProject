@@ -141,4 +141,10 @@
     <string name="simple_custom_view">一些简单的自定义View</string>
     <string name="rect_study">矩形RectF和Rect学习</string>
     <string name="path_study">Path学习</string>
+    <string name="draw_text_study">绘制文本学习</string>
+
+
+    <!--存储部分的相关字符资源-->
+    <string name="storage_home">存储首页</string>
+    <string name="storage_overview">存储概览</string>
 </resources>

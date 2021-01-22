@@ -12,7 +12,9 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".view.test_path.TestPathActivity"></activity>
+        <activity android:name=".view.test_text.TestTextActivity"></activity>
+        <activity android:name=".storage.StorageHomeActivity" />
+        <activity android:name=".view.test_path.TestPathActivity" />
         <activity android:name=".view.test_rect.TestRectActivity" />
         <activity android:name=".view.cutom_view.SimpleCustomViewActivity" />
         <activity android:name=".view.CustomViewHomeActivity" />

@@ -10,7 +10,7 @@ import kotlin.math.min
  * @ClassName: TestPathView6
  * @Author: zyf
  * @Date: 2020/12/29 16:00
- * @Description: 作用描述
+ * @Description: 这个View演示了Path FillType相关的内容
  * @update: 更新者和更新内容
  */
 class TestPathView6 : View {
@@ -27,10 +27,7 @@ class TestPathView6 : View {
 
     //画笔
     private val mPaint by lazy {
-        Paint(Paint.ANTI_ALIAS_FLAG).apply {
-            color = Color.argb(0xff, 0xff, 0, 0)
-            style = Paint.Style.FILL
-        }
+        Paint()
     }
 
     //第一个矩形
@@ -69,8 +66,25 @@ class TestPathView6 : View {
         RectF()
     }
 
+    //第四个路径
+    private val mFourthPath by lazy {
+        Path()
+    }
+
+    //第四个矩形
+    private val mFourthRectF by lazy {
+        RectF()
+    }
+
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
+
+        mPaint.apply {
+            this.isAntiAlias = true
+            color = Color.argb(0xff, 0xff, 0, 0)
+            style = Paint.Style.FILL
+        }
+
         //绘制颜色
         canvas?.drawColor(Color.argb(0xff, 0xee, 0xee, 0xee))
 
@@ -98,11 +112,11 @@ class TestPathView6 : View {
             paddingLeft + areaWidth / 3f * 2,
             paddingTop + areaHeight / 3f * 2,
             firstCircleRadius,
-            Path.Direction.CCW
+            Path.Direction.CW
         )
 
         //绘制第一个路径
-        canvas?.drawPath(mFirstPath, mPaint)
+        //canvas?.drawPath(mFirstPath, mPaint)
 
         //设置第二个矩形
         mSecondRectF.set(
@@ -119,11 +133,11 @@ class TestPathView6 : View {
             measuredWidth - paddingRight - areaWidth / 3f,
             paddingTop + areaHeight / 3f * 2,
             firstCircleRadius,
-            Path.Direction.CW
+            Path.Direction.CCW
         )
         //绘制第二个路径
-        canvas?.drawPath(mSecondPath, mPaint)
-        
+        //canvas?.drawPath(mSecondPath, mPaint)
+
         //设置第三个矩形
         mThirdRectF.set(
             paddingLeft + mPaint.strokeWidth / 2f + areaWidth / 6f,
@@ -134,9 +148,36 @@ class TestPathView6 : View {
 
         //向第三个路径中添加矩形和圆形
         mThirdPath.fillType = Path.FillType.INVERSE_WINDING
-        mThirdPath.addRect(mThirdRectF,Path.Direction.CW)
-        mThirdPath.addCircle(paddingLeft + areaWidth / 3f * 2,measuredHeight - paddingBottom - areaHeight / 3f,firstCircleRadius,Path.Direction.CW)
+        mThirdPath.addRect(mThirdRectF, Path.Direction.CCW)
+        mThirdPath.addCircle(
+            paddingLeft + areaWidth / 3f * 2,
+            measuredHeight - paddingBottom - areaHeight / 3f,
+            firstCircleRadius,
+            Path.Direction.CW
+        )
         //绘制第三个路径
         canvas?.drawPath(mThirdPath,mPaint)
+
+        //设置第四个矩形的范围
+        mFourthRectF.set(
+            measuredWidth / 2f + mPaint.strokeWidth / 2f + areaWidth / 6f,
+            measuredHeight / 2f + mPaint.strokeWidth / 2f + areaHeight / 6f,
+            measuredWidth - paddingRight - mPaint.strokeWidth / 2f - areaWidth / 6f,
+            measuredHeight - paddingBottom - areaHeight / 6f
+        )
+
+
+        //向第四个路径中添加矩形
+        mFourthPath.fillType = Path.FillType.INVERSE_EVEN_ODD
+        mFourthPath.addRect(mFourthRectF, Path.Direction.CW)
+        //添加第四个圆
+        mFourthPath.addCircle(
+            measuredWidth - paddingRight - areaWidth / 3f,
+            measuredHeight - paddingBottom - areaHeight / 3f,
+            firstCircleRadius,
+            Path.Direction.CW
+        )
+        //绘制第四个路径
+        //canvas?.drawPath(mFourthPath, mPaint)
     }
 }

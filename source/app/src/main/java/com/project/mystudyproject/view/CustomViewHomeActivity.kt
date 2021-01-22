@@ -8,6 +8,7 @@ import com.project.mystudyproject.databinding.ActivityCustomViewHomeBinding
 import com.project.mystudyproject.view.cutom_view.SimpleCustomViewActivity
 import com.project.mystudyproject.view.test_path.TestPathActivity
 import com.project.mystudyproject.view.test_rect.TestRectActivity
+import com.project.mystudyproject.view.test_text.TestTextActivity
 
 /**
  * 自定义View首页
@@ -27,7 +28,10 @@ class CustomViewHomeActivity : BaseActivity<ActivityCustomViewHomeBinding>() {
                 startActivity(Intent(this, TestRectActivity::class.java))
 
             R.id.btn_test_path ->
-                startActivity(Intent(this,TestPathActivity::class.java))
+                startActivity(Intent(this, TestPathActivity::class.java))
+
+            R.id.btn_test_text ->
+                startActivity(Intent(this, TestTextActivity::class.java))
         }
     }
 }
