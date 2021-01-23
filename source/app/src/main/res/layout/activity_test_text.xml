@@ -64,9 +64,34 @@
                         android:id="@+id/test_text_view_5"
                         android:layout_width="0dp"
                         android:layout_height="150dp"
+                        android:paddingHorizontal="20dp"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/test_text_view_4" />
+
+                <com.project.mystudyproject.view.test_text.TestTextView6
+                        android:id="@+id/test_text_view_6"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/test_text_view_5" />
+
+                <com.project.mystudyproject.view.test_text.TestTextView7
+                        android:id="@+id/test_text_view_7"
+                        android:layout_width="0dp"
+                        android:layout_height="170dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/test_text_view_6" />
+
+                <com.project.mystudyproject.view.test_text.TestTextView8
+                        android:id="@+id/test_text_view_8"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/test_text_view_7" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>

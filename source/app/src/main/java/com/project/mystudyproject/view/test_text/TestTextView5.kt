@@ -33,7 +33,7 @@ class TestTextView5 : View {
         Paint(Paint.ANTI_ALIAS_FLAG).apply {
             color = Color.argb(0xff, 0xff, 0x33, 0)
             textSize = 40f
-            textAlign = Paint.Align.CENTER
+            textAlign = Paint.Align.LEFT
         }
     }
 
@@ -42,7 +42,7 @@ class TestTextView5 : View {
         Paint(Paint.ANTI_ALIAS_FLAG).apply {
             color = Color.argb(0xff, 0xff, 0x33, 0)
             textSize = 40f
-            textAlign = Paint.Align.CENTER
+            textAlign = Paint.Align.LEFT
             textScaleX = 2f
         }
     }
@@ -53,12 +53,17 @@ class TestTextView5 : View {
         val usableHeight = measuredHeight - paddingTop - paddingBottom
 
         //绘制普通样式的文本
-        canvas?.drawText(mString, measuredWidth / 2f, paddingTop + usableHeight / 4f, mNormalPaint)
+        canvas?.drawText(
+            mString,
+            paddingLeft.toFloat(),
+            paddingTop + usableHeight / 4f,
+            mNormalPaint
+        )
 
         //绘制水平拉伸的文本
         canvas?.drawText(
             mString,
-            measuredWidth / 2f,
+            paddingLeft.toFloat(),
             paddingTop + usableHeight * 0.75f,
             mScalePaint
         )
