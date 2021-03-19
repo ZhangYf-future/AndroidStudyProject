@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context=".service.lifecycle.ServiceLifecycleActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            style="@style/match_parent"
+            android:background="@color/color_white"
+            >
+
+        <include
+                android:id="@+id/layout_title"
+                layout="@layout/layout_title"
+                app:title="@string/service_lifecycle"
+                />
+
+        <Button
+                android:id="@+id/btn_start_service_with_start"
+                style="@style/ButtonStyle"
+                app:layout_constraintTop_toBottomOf="@id/layout_title"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:text="@string/start_service_with_start"
+                android:onClick="doClick"
+                />
+
+        <Button
+                android:id="@+id/btn_stop_service_with_stop"
+                style="@style/ButtonStyle"
+                app:layout_constraintTop_toBottomOf="@id/btn_start_service_with_start"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:text="@string/stop_service_with_stop"
+                android:onClick="doClick"
+                />
+
+        <Button
+                android:id="@+id/btn_start_service_with_bind"
+                style="@style/ButtonStyle"
+                app:layout_constraintTop_toBottomOf="@id/btn_stop_service_with_stop"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:text="@string/start_service_with_bind"
+                android:onClick="doClick"
+                />
+
+        <Button
+                android:id="@+id/btn_unbind_service_1"
+                style="@style/ButtonStyle"
+                app:layout_constraintTop_toBottomOf="@id/btn_start_service_with_bind"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:text="@string/unbind_service_1"
+                android:onClick="doClick"
+                />
+
+        <Button
+                android:id="@+id/btn_start_service_with_bind2"
+                style="@style/ButtonStyle"
+                app:layout_constraintTop_toBottomOf="@id/btn_unbind_service_1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:text="@string/start_service_with_bind"
+                android:onClick="doClick"
+                />
+
+        <Button
+                android:id="@+id/btn_unbind_service_2"
+                style="@style/ButtonStyle"
+                app:layout_constraintTop_toBottomOf="@id/btn_start_service_with_bind2"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:text="@string/unbind_service_2"
+                android:onClick="doClick"
+                />
+
+        <Button
+                android:id="@+id/btn_to_next_activity"
+                style="@style/ButtonStyle"
+                app:layout_constraintTop_toBottomOf="@id/btn_unbind_service_2"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:onClick="doClick"
+                android:text="@string/to_next_page"
+                />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

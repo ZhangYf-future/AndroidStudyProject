@@ -17,6 +17,8 @@ import androidx.dynamicanimation.animation.DynamicAnimation;
 import androidx.dynamicanimation.animation.FlingAnimation;
 import androidx.dynamicanimation.animation.SpringAnimation;
 import androidx.dynamicanimation.animation.SpringForce;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.hopechart.baselib.ui.BaseActivity;
 import com.hopechart.baselib.utils.Logs;
 import com.project.mystudyproject.R;
@@ -36,7 +38,6 @@ public class MoveAnimatorActivity extends BaseActivity<ActivityMoveAnimatorBindi
     @Override
     protected void initUI() {
         super.initUI();
-
         //创建动画用于修改位置
 //        SpringAnimation animation1 = new SpringAnimation(mBinding.circleView2,DynamicAnimation.TRANSLATION_X);
 //        SpringForce force1 = new SpringForce();

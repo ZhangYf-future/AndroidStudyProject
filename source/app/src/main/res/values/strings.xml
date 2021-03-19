@@ -143,8 +143,32 @@
     <string name="path_study">Path学习</string>
     <string name="draw_text_study">绘制文本学习</string>
 
+    <!--Glide学习部分相关字符资源-->
+    <string name="glide_study">Glide学习</string>
+
+
+    <!--Service学习部分相关字符资源-->
+    <string name="service_study">Service学习</string>
+    <string name="service_study_home">Service学习首页</string>
+    <string name="service_lifecycle">Service的生命周期</string>
+    <string name="start_service_with_start">通过startService()启动一个服务</string>
+    <string name="start_service_with_bind">通过bindService()绑定一个服务</string>
+    <string name="to_next_page">跳转到下个页面</string>
+    <string name="stop_service_with_stop">通过stopService()终止服务</string>
+    <string name="unbind_service_1">解除第一个绑定的服务</string>
+    <string name="unbind_service_2">解除第二个绑定的服务</string>
 
     <!--存储部分的相关字符资源-->
     <string name="storage_home">存储首页</string>
     <string name="storage_overview">存储概览</string>
+
+
+    <!--okHttp学习部分字符资源-->
+    <string name="ok_http_study">OkHttp学习</string>
+    <string name="ok_http_study_home">OkHttp学习首页</string>
+    <string name="ok_http_basic_usage">OkHttp基本用法</string>
+    <string name="input_send_get_request_address">输入GET请求的网址</string>
+    <string name="default_get_address">http://www.baidu.com</string>
+    <string name="send_get_request">发送一个GET请求</string>
+    <string name="send_post_request">发送一个post请求</string>
 </resources>

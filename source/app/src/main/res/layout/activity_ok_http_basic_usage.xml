@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context=".network.OkHttpBasicUsageActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            style="@style/match_parent"
+            android:background="@color/color_white">
+
+        <include
+                android:id="@+id/layout_title"
+                layout="@layout/layout_title"
+                app:title="@string/ok_http_basic_usage" />
+
+        <ScrollView
+                style="@style/match_parent_constrain"
+                android:fillViewport="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layout_title">
+
+            <androidx.constraintlayout.widget.ConstraintLayout style="@style/match_parent">
+
+
+                <Button
+                        android:id="@+id/btn_send_get_request"
+                        style="@style/ButtonStyle"
+                        android:onClick="doClick"
+                        android:text="@string/send_get_request"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                <Button
+                        android:id="@+id/btn_send_post_request"
+                        style="@style/ButtonStyle"
+                        android:onClick="doClick"
+                        android:text="@string/send_post_request"
+                        app:layout_constraintTop_toBottomOf="@id/btn_send_get_request"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

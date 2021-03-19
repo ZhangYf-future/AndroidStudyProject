@@ -102,6 +102,15 @@ dependencies {
 
     //基于物理特性的动画API
     implementation rootProject.ext.dependencies["androidx_dynamic_animation"]
+
+    //glide
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+    //使用kotlin则需要再添加下面的配置
+    kapt 'com.github.bumptech.glide:compiler:4.11.0'
+
+    //okHttp
+    implementation "com.squareup.okhttp3:okhttp:4.9.0"
 }
 
 kapt {

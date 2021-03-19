@@ -1,63 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".MainActivity">
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
         <include
-            android:id="@+id/title"
-            layout="@layout/layout_title"
-            app:hideBack="@{true}"
-            app:title="@{@string/home_page}" />
+                android:id="@+id/title"
+                layout="@layout/layout_title"
+                app:hideBack="@{true}"
+                app:title="@{@string/home_page}" />
 
         <ScrollView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/title">
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/title">
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <Button
-                    android:id="@+id/btn_about_notification"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:onClick="doClick"
-                    style="@style/ButtonStyle"
-                    android:text="@string/about_notification" />
+                    android:orientation="vertical">
+
+                <Button
+                        android:id="@+id/btn_about_notification"
+                        style="@style/ButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="doClick"
+                        android:text="@string/about_notification" />
 
                 <Button
                         android:id="@+id/btn_about_animation"
+                        style="@style/ButtonStyle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:onClick="doClick"
-                        style="@style/ButtonStyle"
                         android:text="@string/about_animation" />
+
                 <Button
                         android:id="@+id/btn_mask_filter"
+                        style="@style/ButtonStyle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:onClick="doClick"
-                        style="@style/ButtonStyle"
-                        android:text="MaskFilter测试"
-                        />
+                        android:text="MaskFilter测试" />
 
                 <Button
                         android:id="@+id/btn_custom_view"
+                        style="@style/ButtonStyle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:onClick="doClick"
+                        android:text="@string/custom_view" />
+
+                <Button
+                        android:id="@+id/btn_glide_study"
                         style="@style/ButtonStyle"
-                        android:text="@string/custom_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="doClick"
+                        android:text="@string/glide_study" />
+
+                <Button
+                        android:id="@+id/btn_service_study"
+                        style="@style/ButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="doClick"
+                        android:text="@string/service_study"
+                        />
+
+                <Button
+                        android:id="@+id/btn_ok_http_study"
+                        style="@style/ButtonStyle"
+                        android:onClick="doClick"
+                        android:text="@string/ok_http_study"
                         />
 
             </LinearLayout>

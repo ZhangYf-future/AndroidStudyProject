@@ -1,7 +1,9 @@
 package com.hopechart.baselib.ui
 
 import android.os.Bundle
+import android.text.TextUtils
 import android.view.View
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.FragmentActivity
@@ -45,6 +47,13 @@ abstract class BaseActivity<D : ViewDataBinding> : FragmentActivity() {
 
     //设置数据 默认空实现
     protected open fun initData() {
+    }
+
+    //弹出提示信息
+    protected open fun showInfo(message: String){
+        if(!TextUtils.isEmpty(message)){
+            Toast.makeText(this,message,Toast.LENGTH_SHORT)
+        }
     }
 
     open fun doClick(view: View) {
