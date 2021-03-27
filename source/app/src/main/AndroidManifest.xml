@@ -15,7 +15,11 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             android:usesCleartextTraffic="true">
-        <activity android:name=".network.OkHttpBasicUsageActivity"></activity>
+        <activity android:name=".rx_java_study.RxJavaTransformOperatorActivity"></activity>
+        <activity android:name=".sp.SpActivity" />
+        <activity android:name=".rx_java_study.RxJavaCreatorOperatorActivity" />
+        <activity android:name=".rx_java_study.RxJavaStudyHomeActivity" />
+        <activity android:name=".network.OkHttpBasicUsageActivity" />
         <activity android:name=".network.OkHttpStudyHomeActivity" />
 
         <service

@@ -5,72 +5,82 @@
 ext {
     //版本号及框架信息
     versions = [
-            applicationId          : "com.sanycrane.eyes",        //应用ID,保持和包名一致
-            versionName            : "1.0.0.0",              //版本名称
-            versionCode            : 1,
-            compileSdkVersion      : 29,
-            buildToolsVersion      : "29.0.3",
-            minSdkVersion          : 21,
-            targetSdkVersion       : 29,
+            applicationId                     : "com.sanycrane.eyes",        //应用ID,保持和包名一致
+            versionName                       : "1.0.0.0",              //版本名称
+            versionCode                       : 1,
+            compileSdkVersion                 : 29,
+            buildToolsVersion                 : "29.0.3",
+            minSdkVersion                     : 21,
+            targetSdkVersion                  : 29,
 
-            appcompatVersion       : "1.1.0",
-            coreKtxVersion         : "1.2.0",
-            junitVersion           : "4.13",
-            testJunitVersion       : "1.1.1",
-            espressoVersion        : "3.2.0",
+            appcompatVersion                  : "1.1.0",
+            coreKtxVersion                    : "1.2.0",
+            junitVersion                      : "4.13",
+            testJunitVersion                  : "1.1.1",
+            espressoVersion                   : "3.2.0",
 
             //Android官方库
-            constraintlayoutVersion: "1.1.3",
+            constraintlayoutVersion           : "1.1.3",
             //Fragment Kotlin扩展库
-            fragmentVersion        : "1.2.4",
+            fragmentVersion                   : "1.2.4",
             //multidex
-            multidexVersion        : "2.0.1",
+            multidexVersion                   : "2.0.1",
             //lifecycle库 提供生命周期管理
-            lifecycleVersion       : "2.2.0",
+            lifecycleVersion                  : "2.2.0",
             //material库
-            materialVersion        : "1.1.0",
+            materialVersion                   : "1.1.0",
             //woker 处理可挂起的任务
-            wokerVersion           : "2.3.1",
+            wokerVersion                      : "2.3.1",
 
             //room数据库
-            roomDbVersion          : "2.2.5",
+            roomDbVersion                     : "2.2.5",
             //xRecyclerView
-            xRecyclerView          : "1.6.0",
+            xRecyclerView                     : "1.6.0",
 
             //androidx 的media2库
-            androidx_media2_version: "1.0.3",
+            androidx_media2_version           : "1.0.3",
 
             //基于物理特性的动画API
             androidx_dynamic_animation_version: "1.0.0-alpha03",
+            //RxJava
+            rx_java_version                   : "2.2.21",
+            //RxAndroid
+            rx_android                        : "2.1.1",
     ]
 
     dependencies = [
-            "appcompat"            : "androidx.appcompat:appcompat:${versions["appcompatVersion"]}",
-            "coreKtx"              : "androidx.core:core-ktx:${versions["coreKtxVersion"]}",
-            "junit"                : "junit:junit:${versions["junitVersion"]}",
-            "test_junit"           : "androidx.test.ext:junit:${versions["testJunitVersion"]}",
-            "test_espresso"        : "androidx.test.espresso:espresso-core:${versions["espressoVersion"]}",
+            "appcompat"               : "androidx.appcompat:appcompat:${versions["appcompatVersion"]}",
+            "coreKtx"                 : "androidx.core:core-ktx:${versions["coreKtxVersion"]}",
+            "junit"                   : "junit:junit:${versions["junitVersion"]}",
+            "test_junit"              : "androidx.test.ext:junit:${versions["testJunitVersion"]}",
+            "test_espresso"           : "androidx.test.espresso:espresso-core:${versions["espressoVersion"]}",
 
 
-            "constraintlayout"     : "androidx.constraintlayout:constraintlayout:${versions["constraintlayoutVersion"]}",
-            "fragment"             : "androidx.fragment:fragment-ktx:${versions["fragmentVersion"]}",
-            "multidex"             : "androidx.multidex:multidex:${versions["multidexVersion"]}",
-            "lifecycle"            : "androidx.lifecycle:lifecycle-extensions:${versions["lifecycleVersion"]}",
-            "material"             : "com.google.android.material:material:${versions["materialVersion"]}",
+            "constraintlayout"        : "androidx.constraintlayout:constraintlayout:${versions["constraintlayoutVersion"]}",
+            "fragment"                : "androidx.fragment:fragment-ktx:${versions["fragmentVersion"]}",
+            "multidex"                : "androidx.multidex:multidex:${versions["multidexVersion"]}",
+            "lifecycle"               : "androidx.lifecycle:lifecycle-extensions:${versions["lifecycleVersion"]}",
+            "material"                : "com.google.android.material:material:${versions["materialVersion"]}",
 
-            "roomDb"               : "androidx.room:room-runtime:${versions["roomDbVersion"]}",
-            "roomDbKt"             : "androidx.room:room-compiler:${versions["roomDbVersion"]}",
-            "roomDbKt_Extensions"  : "androidx.room:room-ktx:${versions["roomDbVersion"]}",
+            "roomDb"                  : "androidx.room:room-runtime:${versions["roomDbVersion"]}",
+            "roomDbKt"                : "androidx.room:room-compiler:${versions["roomDbVersion"]}",
+            "roomDbKt_Extensions"     : "androidx.room:room-ktx:${versions["roomDbVersion"]}",
             //xRecyclerView
-            "xRecyclerView"        : "com.jcodecraeer:xrecyclerview:${versions["xRecyclerView"]}",
+            "xRecyclerView"           : "com.jcodecraeer:xrecyclerview:${versions["xRecyclerView"]}",
 
             //androidx media库
-            androidx_media2_session: "androidx.media2:media2-session:${versions["androidx_media2_version"]}",
-            androidx_media2_widget : "androidx.media2:media2-widget:${versions["androidx_media2_version"]}",
-            androidx_media2_player : "androidx.media2:media2-player:${versions["androidx_media2_version"]}",
+            androidx_media2_session   : "androidx.media2:media2-session:${versions["androidx_media2_version"]}",
+            androidx_media2_widget    : "androidx.media2:media2-widget:${versions["androidx_media2_version"]}",
+            androidx_media2_player    : "androidx.media2:media2-player:${versions["androidx_media2_version"]}",
 
             //基于物理特性的动画API
             androidx_dynamic_animation: "androidx.dynamicanimation:dynamicanimation-ktx:${versions["androidx_dynamic_animation_version"]}",
+
+            //rxJava
+            rx_java                   : "io.reactivex.rxjava2:rxjava:${versions["rx_java_version"]}",
+
+            //rx_android
+            rx_android                : "io.reactivex.rxjava2:rxandroid:${versions["rx_android"]}",
     ]
 
     sign = [

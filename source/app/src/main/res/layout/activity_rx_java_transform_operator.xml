@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context=".rx_java_study.RxJavaTransformOperatorActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            style="@style/match_parent"
+            android:background="@color/color_white">
+
+        <include
+                android:id="@+id/layout_title"
+                layout="@layout/layout_title"
+                app:title="@string/rx_java_transform_operator" />
+
+        <!--map()-->
+        <Button
+                android:id="@+id/btn_map"
+                style="@style/ButtonStyle"
+                android:onClick="doClick"
+                android:text="@string/rx_java_map_operator"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layout_title" />
+
+        <!--flatMap-->
+        <Button
+                android:id="@+id/btn_flat_map"
+                style="@style/ButtonStyle"
+                android:onClick="doClick"
+                android:text="@string/rx_java_flat_map_operator"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_map" />
+
+        <!--concatMap-->
+        <Button
+                android:id="@+id/btn_concat_map"
+                style="@style/ButtonStyle"
+                android:onClick="doClick"
+                android:text="@string/rx_java_concat_map_operator"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_flat_map" />
+
+        <!--buffer-->
+        <Button
+                android:id="@+id/btn_buffer"
+                style="@style/ButtonStyle"
+                android:onClick="doClick"
+                android:text="@string/rx_java_buffer_operator"
+                app:layout_constraintTop_toBottomOf="@id/btn_concat_map"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

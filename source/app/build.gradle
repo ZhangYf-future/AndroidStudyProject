@@ -111,6 +111,11 @@ dependencies {
 
     //okHttp
     implementation "com.squareup.okhttp3:okhttp:4.9.0"
+
+    //rxJava
+    implementation rootProject.ext.dependencies["rx_java"]
+    //rxAndroid
+    implementation rootProject.ext.dependencies["rx_android"]
 }
 
 kapt {

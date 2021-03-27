@@ -83,6 +83,20 @@
                         android:text="@string/ok_http_study"
                         />
 
+                <Button
+                        android:id="@+id/btn_rx_java_study"
+                        style="@style/ButtonStyle"
+                        android:onClick="doClick"
+                        android:text="@string/rx_java_study"
+                        />
+
+                <Button
+                        android:id="@+id/btn_shared_preference_study"
+                        style="@style/ButtonStyle"
+                        android:onClick="doClick"
+                        android:text="@string/sp_study"
+                        />
+
             </LinearLayout>
 
         </ScrollView>

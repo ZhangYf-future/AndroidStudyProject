@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context=".rx_java_study.RxJavaStudyHomeActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            style="@style/match_parent"
+            android:background="@color/color_white"
+            >
+
+        <include
+                android:id="@+id/layout_title"
+                layout="@layout/layout_title"
+                app:title="@{@string/rx_java_study_home}"
+                />
+
+        <Button
+                android:id="@+id/btn_basic_implement"
+                style="@style/ButtonStyle"
+                app:layout_constraintTop_toBottomOf="@id/layout_title"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:text="@string/rx_java_basic_implement"
+                android:onClick="doClick"
+                />
+
+        <!--创建操作符-->
+        <Button
+                android:id="@+id/btn_creator_operator"
+                style="@style/ButtonStyle"
+                app:layout_constraintTop_toBottomOf="@id/btn_basic_implement"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:text="@string/rx_java_creator_operator"
+                android:onClick="doClick"
+                />
+
+        <!--变换操作符-->
+        <Button
+                android:id="@+id/btn_transform_operator"
+                style="@style/ButtonStyle"
+                app:layout_constraintTop_toBottomOf="@id/btn_creator_operator"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:text="@string/rx_java_transform_operator"
+                android:onClick="doClick"
+                />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

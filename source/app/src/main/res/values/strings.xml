@@ -171,4 +171,35 @@
     <string name="default_get_address">http://www.baidu.com</string>
     <string name="send_get_request">发送一个GET请求</string>
     <string name="send_post_request">发送一个post请求</string>
+
+
+    <!--RxJava学习部分字符资源-->
+    <string name="rx_java_study">RxJava学习</string>
+    <string name="rx_java_study_home">RxJava学习首页</string>
+    <string name="rx_java_basic_implement">基本实现</string>
+    <string name="rx_java_creator_operator">RxJava创建操作符</string>
+    <string name="rx_java_create_operator">RxJava创建操作符—create()</string>
+    <string name="rx_java_just_operator">RxJava创建操作符—just()</string>
+    <string name="rx_java_from_array_operator">RxJava创建操作符—fromArray()</string>
+    <string name="rx_java_from_iterable_operator">RxJava创建操作符—fromIterable()</string>
+    <string name="rx_java_never_operator">RxJava创建操作符—never()</string>
+    <string name="rx_java_empty_operator">RxJava创建操作符—empty()</string>
+    <string name="rx_java_error_operator">RxJava创建操作符—error()</string>
+    <string name="rx_java_defer_operator">RxJava创建操作符—defer()</string>
+    <string name="rx_java_timer_operator">RxJava创建操作符—timer()</string>
+    <string name="rx_java_interval_operator">RxJava创建操作符—interval()</string>
+    <string name="rx_java_interval_range_operator">RxJava创建操作符—intervalRange()</string>
+    <string name="rx_java_range_operator">RxJava创建操作符—range()</string>
+    <string name="rx_java_range_long_operator">RxJava创建操作符—rangeLong()</string>
+
+    <string name="rx_java_transform_operator">RxJava变换操作符</string>
+    <string name="rx_java_map_operator">RxJava变换操作符—map()</string>
+    <string name="rx_java_flat_map_operator">RxJava变换操作符—flatMap()</string>
+    <string name="rx_java_concat_map_operator">RxJava变换操作符—concatMap()</string>
+    <string name="rx_java_buffer_operator">RxJava变换操作符—buffer()</string>
+
+    <!--SharedPreference-->
+    <string name="sp_study">SharedPreference学习</string>
+    <string name="sp_study_home">SharedPreference学习首页</string>
+    <string name="sp_get_and_save_package_name">存取包名</string>
 </resources>

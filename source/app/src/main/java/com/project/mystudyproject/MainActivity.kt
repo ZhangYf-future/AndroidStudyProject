@@ -8,7 +8,9 @@ import com.project.mystudyproject.databinding.ActivityMainBinding
 import com.project.mystudyproject.glide.GlideStudyHomeActivity
 import com.project.mystudyproject.network.OkHttpStudyHomeActivity
 import com.project.mystudyproject.notification.home.NotificationHomeActivity
+import com.project.mystudyproject.rx_java_study.RxJavaStudyHomeActivity
 import com.project.mystudyproject.service.ServiceHomeActivity
+import com.project.mystudyproject.sp.SpActivity
 import com.project.mystudyproject.view.CustomViewHomeActivity
 import com.project.mystudyproject.view.MaskFilterActivity
 
@@ -40,6 +42,12 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
             R.id.btn_ok_http_study ->
                 startActivity(Intent(this, OkHttpStudyHomeActivity::class.java))
+
+            R.id.btn_rx_java_study ->
+                startActivity(Intent(this, RxJavaStudyHomeActivity::class.java))
+
+            R.id.btn_shared_preference_study ->
+                startActivity(Intent(this, SpActivity::class.java))
         }
     }
 }
