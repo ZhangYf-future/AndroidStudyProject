@@ -6,8 +6,12 @@ ext {
     //版本号及框架信息
     versions = [
             applicationId                     : "com.sanycrane.eyes",        //应用ID,保持和包名一致
+
+
             versionName                       : "1.0.0.0",              //版本名称
             versionCode                       : 1,
+
+
             compileSdkVersion                 : 29,
             buildToolsVersion                 : "29.0.3",
             minSdkVersion                     : 21,

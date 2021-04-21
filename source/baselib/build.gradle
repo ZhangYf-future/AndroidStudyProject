@@ -41,9 +41,11 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8
     }
+
     dataBinding {
         enabled = true
     }
+
 }
 
 //解决DataBinding和Kotlin插件有冲突的问题

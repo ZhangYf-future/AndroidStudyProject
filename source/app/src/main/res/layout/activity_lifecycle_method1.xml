@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activity.lifecycle.ActivityLifecycleMethod1Activity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/match_parent"
+        android:background="@color/color_white"
+        >
+
+        <include
+            android:id="@+id/layout_title"
+            layout="@layout/layout_title"
+            app:title="@string/first_activity"
+            />
+
+        <Button
+            android:id="@+id/btn_to_second_activity"
+            style="@style/ButtonStyleConstrain"
+            app:layout_constraintTop_toBottomOf="@id/layout_title"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text="@string/click_to_second_activity"
+            android:onClick="doClick"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

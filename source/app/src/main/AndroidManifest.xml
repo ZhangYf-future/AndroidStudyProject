@@ -1,21 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-        package="com.project.mystudyproject">
+    package="com.project.mystudyproject">
 
     <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <permission
+        android:name="com.project.mystudyproject"
+        android:protectionLevel="signature" />
+
     <application
-            android:name=".MyApplication"
-            android:allowBackup="true"
-            android:icon="@mipmap/ic_launcher"
-            android:label="@string/app_name"
-            android:roundIcon="@mipmap/ic_launcher_round"
-            android:supportsRtl="true"
-            android:theme="@style/AppTheme"
-            android:usesCleartextTraffic="true">
-        <activity android:name=".rx_java_study.RxJavaTransformOperatorActivity"></activity>
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".jni_study.JniStudyHomeActivity"></activity>
+
+        <service
+            android:name=".service.aidl.AsyncAidlService"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="com.project.mystudyproject">
+            <intent-filter>
+                <action android:name="com.project.mystudyproject.service.aidl.AsyncAidlService" />
+            </intent-filter>
+        </service>
+
+        <activity android:name=".service.aidl.AidlTestActivity" />
+
+        <service
+            android:name=".service.aidl.BookService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="BookService" />
+            </intent-filter>
+        </service>
+
+        <activity android:name=".service.intent_service.IntentServiceStudyActivity" />
+        <activity android:name=".activity.lifecycle.ActivityLifecycleMethod2Activity" />
+        <activity android:name=".activity.lifecycle.ActivityLifecycleMethod1Activity" />
+        <activity android:name=".activity.ActivityStudyHomeActivity" />
+        <activity android:name=".rx_java_study.RxJavaTransformOperatorActivity" />
         <activity android:name=".sp.SpActivity" />
         <activity android:name=".rx_java_study.RxJavaCreatorOperatorActivity" />
         <activity android:name=".rx_java_study.RxJavaStudyHomeActivity" />
@@ -23,15 +54,16 @@
         <activity android:name=".network.OkHttpStudyHomeActivity" />
 
         <service
-                android:name=".service.intent_service.MyIntentService"
-                android:exported="false" />
+            android:name=".service.intent_service.MyIntentService"
+            android:enabled="true"
+            android:exported="false" />
 
         <activity android:name=".service.lifecycle.ServiceLifecycle2Activity" />
 
         <service
-                android:name=".service.lifecycle.LifecycleTest1Service"
-                android:enabled="true"
-                android:exported="false" />
+            android:name=".service.lifecycle.LifecycleTest1Service"
+            android:enabled="true"
+            android:exported="false" />
 
         <activity android:name=".service.lifecycle.ServiceLifecycleActivity" />
         <activity android:name=".service.ServiceHomeActivity" />
@@ -53,19 +85,19 @@
         <activity android:name=".animation.property.PropertyAnimationHomeActivity" />
         <activity android:name=".animation.AnimationHomeActivity" />
         <activity
-                android:name=".notification.summary.SpecialActivity"
-                android:excludeFromRecents="true"
-                android:launchMode="singleTask"
-                android:taskAffinity="" />
+            android:name=".notification.summary.SpecialActivity"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTask"
+            android:taskAffinity="" />
         <activity
-                android:name=".notification.summary.TestTaskStackBuilderActivity2"
-                android:parentActivityName=".notification.summary.TestTaskStackBuilderActivity1" />
+            android:name=".notification.summary.TestTaskStackBuilderActivity2"
+            android:parentActivityName=".notification.summary.TestTaskStackBuilderActivity1" />
         <activity
-                android:name=".notification.summary.TestTaskStackBuilderActivity1"
-                android:parentActivityName=".notification.summary.SummaryActivity" />
+            android:name=".notification.summary.TestTaskStackBuilderActivity1"
+            android:parentActivityName=".notification.summary.SummaryActivity" />
         <activity
-                android:name=".notification.summary.SummaryActivity"
-                android:parentActivityName=".notification.home.NotificationHomeActivity" />
+            android:name=".notification.summary.SummaryActivity"
+            android:parentActivityName=".notification.home.NotificationHomeActivity" />
         <activity android:name=".notification.channel.NotificationChannelTestActivity" />
         <activity android:name=".notification.group.GroupNotificationActivity" />
         <activity android:name=".notification.style.MediaStyleActivity" />
@@ -74,30 +106,30 @@
         <activity android:name=".notification.style.BigTextActivity" />
         <activity android:name=".notification.style.BigPictureActivity" />
         <activity
-                android:name=".notification.other.ImportantActivity"
-                android:parentActivityName=".notification.progress.ProgressNotificationActivity"
-                android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+            android:name=".notification.other.ImportantActivity"
+            android:parentActivityName=".notification.progress.ProgressNotificationActivity"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
         <activity android:name=".notification.other.OtherNotificationActivity" />
         <activity
-                android:name=".notification.progress.ProgressNotificationActivity"
-                android:parentActivityName=".notification.home.NotificationHomeActivity" />
+            android:name=".notification.progress.ProgressNotificationActivity"
+            android:parentActivityName=".notification.home.NotificationHomeActivity" />
         <activity
-                android:name=".notification.simple.SimpleNotification4Activity"
-                android:excludeFromRecents="true"
-                android:launchMode="singleTask"
-                android:taskAffinity="" />
+            android:name=".notification.simple.SimpleNotification4Activity"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTask"
+            android:taskAffinity="" />
         <activity
-                android:name=".notification.simple.SimpleNotification3Activity"
-                android:parentActivityName=".notification.home.NotificationHomeActivity" />
+            android:name=".notification.simple.SimpleNotification3Activity"
+            android:parentActivityName=".notification.home.NotificationHomeActivity" />
         <activity
-                android:name=".notification.simple.SimpleNotification2Activity"
-                android:parentActivityName=".notification.simple.SimpleNotification3Activity" />
+            android:name=".notification.simple.SimpleNotification2Activity"
+            android:parentActivityName=".notification.simple.SimpleNotification3Activity" />
         <activity
-                android:name=".notification.simple.SimpleNotificationActivity"
-                android:parentActivityName=".notification.home.NotificationHomeActivity" />
+            android:name=".notification.simple.SimpleNotificationActivity"
+            android:parentActivityName=".notification.home.NotificationHomeActivity" />
         <activity
-                android:name=".notification.home.NotificationHomeActivity"
-                android:parentActivityName=".MainActivity" />
+            android:name=".notification.home.NotificationHomeActivity"
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

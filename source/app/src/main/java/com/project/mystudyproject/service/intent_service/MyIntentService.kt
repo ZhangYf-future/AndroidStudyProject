@@ -1,55 +1,68 @@
 package com.project.mystudyproject.service.intent_service
 
 import android.app.IntentService
+import android.content.BroadcastReceiver
+import android.content.Context
 import android.content.Intent
+import android.os.Binder
+import android.os.IBinder
 import android.os.Looper
+import androidx.localbroadcastmanager.content.LocalBroadcastManager
+import com.hopechart.baselib.utils.Logs
 import java.io.File
 import java.util.logging.Handler
 
-// TODO: Rename actions, choose action names that describe tasks that this
-// IntentService can perform, e.g. ACTION_FETCH_NEW_ITEMS
-const val ACTION_FOO = "com.project.mystudyproject.service.intent_service.action.FOO"
-const val ACTION_BAZ = "com.project.mystudyproject.service.intent_service.action.BAZ"
-
-// TODO: Rename parameters
-const val EXTRA_PARAM1 = "com.project.mystudyproject.service.intent_service.extra.PARAM1"
-const val EXTRA_PARAM2 = "com.project.mystudyproject.service.intent_service.extra.PARAM2"
-
-/**
- * An [IntentService] subclass for handling asynchronous task requests in
- * a service on a separate handler thread.
- * TODO: Customize class - update intent actions and extra parameters.
- */
 class MyIntentService : IntentService("MyIntentService") {
 
+    private val mLocalBroadcastManager by lazy {
+        LocalBroadcastManager.getInstance(this)
+    }
+
+    private val mBinder by lazy {
+        MyIntentServiceBinder()
+    }
+
+    var mValueListener: IntentServiceStudyActivity.IntentServiceValueListener? = null
+
     override fun onHandleIntent(intent: Intent?) {
-        when (intent?.action) {
-            ACTION_FOO -> {
-                val param1 = intent.getStringExtra(EXTRA_PARAM1)
-                val param2 = intent.getStringExtra(EXTRA_PARAM2)
-                handleActionFoo(param1, param2)
-            }
-            ACTION_BAZ -> {
-                val param1 = intent.getStringExtra(EXTRA_PARAM1)
-                val param2 = intent.getStringExtra(EXTRA_PARAM2)
-                handleActionBaz(param1, param2)
-            }
+        //线程休眠
+        Thread.sleep(1 * 1000)
+        intent?.let {
+            val value = it.getStringExtra("key")
+            Logs.e("value is $value")
+//            val newIntent = Intent(intent)
+//            newIntent.action = IntentServiceStudyActivity.TestDataBackReceiver::class.simpleName
+//            mLocalBroadcastManager.sendBroadcast(newIntent)
+            mValueListener?.value(value)
         }
     }
 
-    /**
-     * Handle action Foo in the provided background thread with the provided
-     * parameters.
-     */
-    private fun handleActionFoo(param1: String, param2: String) {
-        TODO("Handle action Foo")
+
+    override fun onCreate() {
+        Logs.e("onCreate...")
+        super.onCreate()
     }
 
-    /**
-     * Handle action Baz in the provided background thread with the provided
-     * parameters.
-     */
-    private fun handleActionBaz(param1: String, param2: String) {
-        TODO("Handle action Baz")
+    override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
+        Logs.e("onStartCommand...")
+        return super.onStartCommand(intent, flags, startId)
     }
+
+
+    override fun onDestroy() {
+        Logs.e("onDestroy...")
+        super.onDestroy()
+    }
+
+    override fun onBind(intent: Intent?): IBinder {
+        super.onStart(intent, 0)
+        return mBinder
+
+    }
+
+    inner class MyIntentServiceBinder : Binder() {
+        fun getService(): MyIntentService = this@MyIntentService
+    }
+
+
 }

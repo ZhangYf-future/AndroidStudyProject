@@ -3,9 +3,11 @@ package com.project.mystudyproject
 import android.content.Intent
 import android.view.View
 import com.hopechart.baselib.ui.BaseActivity
+import com.project.mystudyproject.activity.ActivityStudyHomeActivity
 import com.project.mystudyproject.animation.AnimationHomeActivity
 import com.project.mystudyproject.databinding.ActivityMainBinding
 import com.project.mystudyproject.glide.GlideStudyHomeActivity
+import com.project.mystudyproject.jni_study.JniStudyHomeActivity
 import com.project.mystudyproject.network.OkHttpStudyHomeActivity
 import com.project.mystudyproject.notification.home.NotificationHomeActivity
 import com.project.mystudyproject.rx_java_study.RxJavaStudyHomeActivity
@@ -48,6 +50,12 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
             R.id.btn_shared_preference_study ->
                 startActivity(Intent(this, SpActivity::class.java))
+
+            R.id.btn_activity_study ->
+                startActivity(Intent(this, ActivityStudyHomeActivity::class.java))
+
+            R.id.btn_jni_study ->
+                startActivity(Intent(this, JniStudyHomeActivity::class.java))
         }
     }
 }

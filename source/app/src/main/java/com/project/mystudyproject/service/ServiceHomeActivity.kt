@@ -5,6 +5,9 @@ import android.view.View
 import com.hopechart.baselib.ui.BaseActivity
 import com.project.mystudyproject.R
 import com.project.mystudyproject.databinding.ActivityServiceHomeBinding
+import com.project.mystudyproject.service.aidl.AidlTestActivity
+import com.project.mystudyproject.service.intent_service.IntentServiceStudyActivity
+import com.project.mystudyproject.service.intent_service.MyIntentService
 import com.project.mystudyproject.service.lifecycle.ServiceLifecycleActivity
 
 /**
@@ -21,6 +24,12 @@ class ServiceHomeActivity : BaseActivity<ActivityServiceHomeBinding>() {
                 val intent = Intent(this, ServiceLifecycleActivity::class.java)
                 startActivity(intent)
             }
+
+            R.id.btn_intent_service_study ->
+                startActivity(Intent(this, IntentServiceStudyActivity::class.java))
+
+            R.id.btn_aidl_study ->
+                startActivity(Intent(this, AidlTestActivity::class.java))
         }
     }
 

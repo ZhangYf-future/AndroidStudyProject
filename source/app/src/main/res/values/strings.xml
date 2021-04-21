@@ -157,6 +157,15 @@
     <string name="stop_service_with_stop">通过stopService()终止服务</string>
     <string name="unbind_service_1">解除第一个绑定的服务</string>
     <string name="unbind_service_2">解除第二个绑定的服务</string>
+    <string name="intent_service_study">IntentService学习</string>
+    <string name="start_intent_service">启动IntentService</string>
+    <string name="try_bind_intent_service">尝试绑定IntentService</string>
+    <string name="try_get_intent_service_value_with_interface">尝试通过接口回调数据</string>
+    <string name="aidl_study">AIDL学习</string>
+    <string name="connect_service">连接服务</string>
+    <string name="get_all_books">获取全部书籍</string>
+    <string name="add_book">添加一本书籍</string>
+
 
     <!--存储部分的相关字符资源-->
     <string name="storage_home">存储首页</string>
@@ -202,4 +211,20 @@
     <string name="sp_study">SharedPreference学习</string>
     <string name="sp_study_home">SharedPreference学习首页</string>
     <string name="sp_get_and_save_package_name">存取包名</string>
+
+
+    <!--Activity学习部分-->
+    <string name="activity_study_tag">ActivityStudyTag</string>
+    <string name="activity_study">Activity学习</string>
+    <string name="activity_study_home">Activity学习首页</string>
+    <string name="lifecycle_method">生命周期方法</string>
+    <string name="first_activity">第一个Activity</string>
+    <string name="second_activity">第二个Activity</string>
+    <string name="click_to_second_activity">点击跳转到第二个Activity</string>
+    <string name="click_back_first_activity">点击返回到第一个Activity</string>
+
+
+    <!--Jni学习部分-->
+    <string name="jni_study">Jni学习</string>
+    <string name="jni_study_home">Jni学习首页</string>
 </resources>

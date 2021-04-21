@@ -97,6 +97,20 @@
                         android:text="@string/sp_study"
                         />
 
+                <Button
+                    android:id="@+id/btn_activity_study"
+                    style="@style/ButtonStyle"
+                    android:onClick="doClick"
+                    android:text="@string/activity_study"
+                    />
+
+                <Button
+                    android:id="@+id/btn_jni_study"
+                    style="@style/ButtonStyle"
+                    android:onClick="doClick"
+                    android:text="@string/jni_study"
+                    />
+
             </LinearLayout>
 
         </ScrollView>

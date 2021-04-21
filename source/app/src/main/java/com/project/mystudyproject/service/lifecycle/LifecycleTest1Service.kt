@@ -67,6 +67,9 @@ class LifecycleTest1Service : Service() {
         super.onLowMemory()
     }
 
+    /**
+     * 当服务启动以后，点击home键返回到桌面会调用这个方法
+     */
     override fun onTrimMemory(level: Int) {
         Logs.e(ID, "onTrimMemory:$level")
         super.onTrimMemory(level)
@@ -82,6 +85,11 @@ class LifecycleTest1Service : Service() {
     override fun onUnbind(intent: Intent?): Boolean {
         Logs.e(ID, "onUnbind")
         return super.onUnbind(intent)
+    }
+
+    override fun onStart(intent: Intent?, startId: Int) {
+        super.onStart(intent, startId)
+        Logs.e(ID,"onStart...")
     }
 
     fun getTestNumber() = testNumber
