@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">TVApp</string>
+
+    <string name="lean_back_widget_study">Leanback组件库学习</string>
+
+    <!--BrandedFragment-->
+    <string name="branded_fragment_study">BrandedSupportFragment学习</string>
+    <string name="branded_fragment_study_page">BrandedSupportFragment学习页面</string>
+    <string name="my_branded_fragment_content">MyBrandedFragmentContent</string>
+
+    <!--BrowseSupportFragment-->
+    <string name="browse_support_fragment_study">BrowseSupportFragment学习</string>
+
+
+    <!--RowsSupportFragment-->
+    <string name="rows_support_fragment_study">RowsSupportFragment学习</string>
 </resources>

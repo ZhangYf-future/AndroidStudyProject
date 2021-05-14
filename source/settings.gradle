@@ -1,3 +1,4 @@
+include ':tvapp'
 include ':data'
 include ':baselib'
 include ':app'
