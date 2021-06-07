@@ -11,14 +11,17 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:padding="20dp"
+        android:background="@android:color/holo_orange_dark"
         android:text="@string/rows_support_fragment_study"
         android:textSize="20sp"
         android:textStyle="bold"
+        android:textColor="@color/color_white"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <fragment
+        android:id="@+id/fragment_study_rows_support"
         android:name="com.project.tvapp.fragment.rows1.MyRowsSupportFragment1"
         android:layout_width="0dp"
         android:layout_height="0dp"

@@ -1,5 +1,6 @@
 package com.project.tvapp.fragment.rows
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +9,7 @@ import androidx.leanback.widget.ListRow
 import androidx.leanback.widget.Presenter
 import androidx.leanback.widget.RowHeaderPresenter
 import com.project.tvapp.R
+import com.project.tvapp.fragment.rows1.presenter.StringHeaderPresenter
 
 class TitlePresenter : RowHeaderPresenter() {
 
@@ -19,6 +21,7 @@ class TitlePresenter : RowHeaderPresenter() {
     }
 
     override fun onBindViewHolder(viewHolder: Presenter.ViewHolder?, item: Any?) {
+        Log.e("zyf", "viewHolder: " + viewHolder + " is " + (viewHolder is ViewHolder))
         val holder = viewHolder!! as ViewHolder
         holder.mLeftTitle.text = if(item is ListRow) item.contentDescription else item.toString()
         holder.mRightTitle.text = "右边的标题"
