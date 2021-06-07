@@ -25,6 +25,7 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
                 <!-- 如果是tv应用，则配置此项 -->
                 <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
             </intent-filter>

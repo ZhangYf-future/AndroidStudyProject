@@ -12,31 +12,25 @@ import com.project.tvapp.fragment.rows1.presenter.StringPresenter
  * @author 张一凡
  */
 class MyRowsSupportFragment1 : RowsSupportFragment() {
-
-    //每一行的标题Presenter
-//    private val mRowHeaderPresenter by lazy {
-//        StringHeaderPresenter()
-//    }
-
-    //创建一个Presenter
-    private val mStringPresenter by lazy {
-        StringPresenter().apply {
-            //this.selectEffectEnabled = false
-        }
-//        StringPresenter().apply {
-//            this.headerPresenter = mRowHeaderPresenter
-//        }
+    //创建一个StringHeaderPresenter,用于显示每一个item的header数据
+    private val mStringHeaderPresenter by lazy {
+        StringHeaderPresenter()
     }
 
-    //创建一个adapter,用于设置数据
+    //创建一个Presenter,这个Presenter用于显示每一个item的数据
+    private val mStringPresenter by lazy {
+        StringPresenter().apply {
+            this.headerPresenter = mStringHeaderPresenter
+        }
+    }
+
+    //创建一个adapter,用于保存数据
     private val mPageAdapter by lazy {
         ArrayObjectAdapter(mStringPresenter)
     }
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         //添加数据
         for (i in 0 until 10) {
             val row = Row()
@@ -47,8 +41,5 @@ class MyRowsSupportFragment1 : RowsSupportFragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         adapter = mPageAdapter
-//        presenterSelector = object : PresenterSelector() {
-//            override fun getPresenter(item: Any?) = mStringPresenter
-//        }
     }
 }

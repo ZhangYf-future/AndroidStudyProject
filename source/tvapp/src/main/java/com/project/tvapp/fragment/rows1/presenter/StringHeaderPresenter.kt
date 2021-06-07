@@ -9,7 +9,12 @@ import androidx.leanback.widget.Presenter
 import androidx.leanback.widget.RowHeaderPresenter
 import com.project.tvapp.R
 
+/**
+ * 这个HeaderPresenter用于在RowsSupportFragment中，所以这个HeaderPresenter继承自RowHeaderPresenter
+ */
 class StringHeaderPresenter : RowHeaderPresenter() {
+
+    private val TAG = StringHeaderPresenter::class.java.simpleName
 
     class ViewHolder(val rootView: View) : RowHeaderPresenter.ViewHolder(rootView) {
         val textView: TextView by lazy {
@@ -18,7 +23,7 @@ class StringHeaderPresenter : RowHeaderPresenter() {
     }
 
     override fun onCreateViewHolder(parent: ViewGroup?): Presenter.ViewHolder {
-        Log.e("zyf", "onCreateViewHolder")
+        Log.d(TAG, "onCreateViewHolder")
         val context = parent?.context
         val view = LayoutInflater.from(context)
             .inflate(R.layout.layout_string_header_presenter, parent, false)
@@ -27,8 +32,8 @@ class StringHeaderPresenter : RowHeaderPresenter() {
 
     override fun onBindViewHolder(viewHolder: Presenter.ViewHolder?, item: Any?) {
         super.onBindViewHolder(viewHolder, item)
-        Log.e(
-            "zyf",
+        Log.d(
+            TAG,
             "viewHolder: " + viewHolder + " is " + (viewHolder is ViewHolder) + " item is " + item
         )
         if (isNullItemVisibilityGone && item == null) {
