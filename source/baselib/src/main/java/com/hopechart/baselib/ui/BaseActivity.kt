@@ -13,6 +13,10 @@ abstract class BaseActivity<D : ViewDataBinding> : FragmentActivity() {
 
     protected open lateinit var mBinding: D
 
+    protected open val TAG by lazy {
+        this.localClassName
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mBinding = DataBindingUtil.setContentView(this, getLayoutId())
@@ -50,9 +54,9 @@ abstract class BaseActivity<D : ViewDataBinding> : FragmentActivity() {
     }
 
     //弹出提示信息
-    protected open fun showInfo(message: String){
-        if(!TextUtils.isEmpty(message)){
-            Toast.makeText(this,message,Toast.LENGTH_SHORT)
+    protected open fun showInfo(message: String) {
+        if (!TextUtils.isEmpty(message)) {
+            Toast.makeText(this, message, Toast.LENGTH_SHORT)
         }
     }
 

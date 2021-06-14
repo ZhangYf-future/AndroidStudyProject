@@ -3,3 +3,5 @@ include ':data'
 include ':baselib'
 include ':app'
 rootProject.name = "MyStudyProject"
+include ':opencvapplication'
+include ':opencvsdk'
